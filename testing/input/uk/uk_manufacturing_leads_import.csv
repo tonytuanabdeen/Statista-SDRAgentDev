@@ -1,0 +1,9 @@
+FirstName,LastName,Title,Industry,Company,Country,LeadRole__c,ProductOfInterest__c,SubscriptionStatus__c,Website,Email,LeadSource,Status
+Saarah,Ching,Chief Marketing Officer,MANUFACTURING,Journeyhorizon,United Kingdom,Coach,BASIC_ACCOUNT_PLUS,non-subscriber,https://www.journeyh.io,sarah.chen@journeyh.io,Webform,MQL
+Markos,Webher,Head of Analytics,MANUFACTURING,New North,United Kingdom,Coach,BASIC_ACCOUNT_PLUS,non-subscriber,https://www.newnorth.com,m.weber@newnorth.com,Webform,MQL
+Elaina,Petrova,VP of Strategy,MANUFACTURING,SeeResponse,United Kingdom,Coach,BASIC_ACCOUNT_PLUS,non-subscriber,https://www.seeresponse.co,elena.p@seeresponse.co,Webform,MQL
+James,Connaire,Chief Product Officer,MANUFACTURING,Walker Sands,United Kingdom,Coach,BASIC_ACCOUNT_PLUS,non-subscriber,https://www.walkersands.com,j.oconnor@walkersands.com,Webform,MQL
+Priiaa,Sharma,Senior Consultant,MANUFACTURING,Ironpaper,United Kingdom,Coach,BASIC_ACCOUNT_PLUS,non-subscriber,https://www.ironpaper.com,priya.s@ironpaper.com,Webform,MQL
+Aaesha,Kahn,CEO,MANUFACTURING,Bay Leaf Digital,United Kingdom,Coach,BASIC_ACCOUNT_PLUS,non-subscriber,https://www.bayleafdigital.com,aisha.k@bayleafdigital.com,Webform,MQL
+Zofia,Garcia,Executive Assistant,MANUFACTURING,Elevation Marketing,United Kingdom,Coach,BASIC_ACCOUNT_PLUS,non-subscriber,https://www.elevationmarketing.com,s.garcia@elevationmarketing.com,Webform,MQL
+Kenji,Tanakuh,Random Role,MANUFACTURING,Sagefrog,United Kingdom,Coach,BASIC_ACCOUNT_PLUS,non-subscriber,https://www.sagefrog.com,k.tanaka@sagefrog.com,Webform,MQL

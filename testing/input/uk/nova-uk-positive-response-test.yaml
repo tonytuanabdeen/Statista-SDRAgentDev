@@ -1,0 +1,25 @@
+# Description: Tests Initial Outreach topic for LNA Nova SDR agent with Lead 00QbY00000Mnk29UAB (Tuan Abdeen, CFO @ SFDC, Telecom/IT)
+
+name: "Nova Positive Response Test {DATETIME}"
+subjectType: AGENT
+subjectName: {AGENT_API_NAME}
+
+testCases:
+  - utterance: "I'm interested to learn more about your products."
+    expectedTopic: sales_sdr_agent_MeetingResponse
+    expectedActions:
+      - GetRecordDetails
+    expectedOutcome: "A reply email is successfully drafted."
+    contextVariables:
+      - name: "$Context.OrchestrationStage"
+        value: "Reply"
+      - name: "$Context.currentObjectApiName"
+        value: "Lead"
+      - name: "$Context.currentRecordId"
+        value: {DYNAMIC_LEAD_RECORD_ID}
+      - name: "$Context.ContactId"
+        value: {DYNAMIC_LEAD_RECORD_ID}
+      - name: "$Context.emailBody"
+        value: "Hello Nova, thank you for your email. I'm interested to learn more about your products. Could you please tell me more?"
+      - name: "$Context.actionCadenceStepTrackerId"
+        value: "8HF000000000000"

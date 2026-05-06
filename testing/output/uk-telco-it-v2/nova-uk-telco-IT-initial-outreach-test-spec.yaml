@@ -1,0 +1,94 @@
+name: "Nova Initial Outreach Test 1777553645318"
+subjectType: AGENT
+subjectName: Agentforce_Sales_Development_Rep_2
+
+testCases:
+  - utterance: "Generate an initial outreach email for this lead"
+    expectedTopic: sales_sdr_agent_InitialOutreach
+    expectedActions:
+      - LNA_Nova_Initial_Outreach
+    expectedOutcome: "Agent generates a personalized first-touch outreach email with a subject line and greeting, using UK spelling, without sharing prices or recommending specific meeting times"
+    contextVariables:
+      - name: "$Context.OrchestrationStage"
+        value: "Intro"
+      - name: "$Context.currentObjectApiName"
+        value: "Lead"
+      - name: "$Context.currentRecordId"
+        value: "00QbY00000NPkC5"
+      - name: "$Context.actionCadenceStepTrackerId"
+        value: "8HF000000000000"
+
+  - utterance: "Generate an initial outreach email for this lead"
+    expectedTopic: sales_sdr_agent_InitialOutreach
+    expectedActions:
+      - LNA_Nova_Initial_Outreach
+    expectedOutcome: "Agent generates a personalized first-touch outreach email with a subject line and greeting, using UK spelling, without sharing prices or recommending specific meeting times"
+    contextVariables:
+      - name: "$Context.OrchestrationStage"
+        value: "Intro"
+      - name: "$Context.currentObjectApiName"
+        value: "Lead"
+      - name: "$Context.currentRecordId"
+        value: "00QbY00000NPkC6"
+      - name: "$Context.actionCadenceStepTrackerId"
+        value: "8HF000000000000"
+
+  - utterance: "Generate an initial outreach email for this lead"
+    expectedTopic: sales_sdr_agent_InitialOutreach
+    expectedActions:
+      - LNA_Nova_Initial_Outreach
+    expectedOutcome: "Agent generates a personalized first-touch outreach email with a subject line and greeting, using UK spelling, without sharing prices or recommending specific meeting times"
+    contextVariables:
+      - name: "$Context.OrchestrationStage"
+        value: "Intro"
+      - name: "$Context.currentObjectApiName"
+        value: "Lead"
+      - name: "$Context.currentRecordId"
+        value: "00QbY00000NPkC7"
+      - name: "$Context.actionCadenceStepTrackerId"
+        value: "8HF000000000000"
+
+  - utterance: "Generate an initial outreach email for this lead"
+    expectedTopic: sales_sdr_agent_InitialOutreach
+    expectedActions:
+      - LNA_Nova_Initial_Outreach
+    expectedOutcome: "Agent generates a personalized first-touch outreach email with a subject line and greeting, using UK spelling, without sharing prices or recommending specific meeting times"
+    contextVariables:
+      - name: "$Context.OrchestrationStage"
+        value: "Intro"
+      - name: "$Context.currentObjectApiName"
+        value: "Lead"
+      - name: "$Context.currentRecordId"
+        value: "00QbY00000NPkC8"
+      - name: "$Context.actionCadenceStepTrackerId"
+        value: "8HF000000000000"
+
+  - utterance: "Generate an initial outreach email for this lead"
+    expectedTopic: sales_sdr_agent_InitialOutreach
+    expectedActions:
+      - LNA_Nova_Initial_Outreach
+    expectedOutcome: "Agent generates a personalized first-touch outreach email with a subject line and greeting, using UK spelling, without sharing prices or recommending specific meeting times"
+    contextVariables:
+      - name: "$Context.OrchestrationStage"
+        value: "Intro"
+      - name: "$Context.currentObjectApiName"
+        value: "Lead"
+      - name: "$Context.currentRecordId"
+        value: "00QbY00000NPkC9"
+      - name: "$Context.actionCadenceStepTrackerId"
+        value: "8HF000000000000"
+
+  - utterance: "Generate an initial outreach email for this lead"
+    expectedTopic: sales_sdr_agent_InitialOutreach
+    expectedActions:
+      - LNA_Nova_Initial_Outreach
+    expectedOutcome: "Agent generates a personalized first-touch outreach email with a subject line and greeting, using UK spelling, without sharing prices or recommending specific meeting times"
+    contextVariables:
+      - name: "$Context.OrchestrationStage"
+        value: "Intro"
+      - name: "$Context.currentObjectApiName"
+        value: "Lead"
+      - name: "$Context.currentRecordId"
+        value: "00QbY00000NPkCA"
+      - name: "$Context.actionCadenceStepTrackerId"
+        value: "8HF000000000000"

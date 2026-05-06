@@ -1,0 +1,120 @@
+{
+  "endTime": "2026-04-30T11:14:30Z",
+  "startTime": "2026-04-30T11:14:03Z",
+  "status": "COMPLETED",
+  "subjectName": "Nova_V2_UK_Manu_Positive_Nova",
+  "testCases": [
+    {
+      "endTime": "2026-04-30T11:14:29Z",
+      "generatedData": {
+        "actionsSequence": "[&#39;GetRecordDetails&#39;, &#39;LNA_Nova_Update_Lead_Record&#39;, &#39;LNA_Nova_Update_Lead_Record&#39;]",
+        "invokedActions": "[[{\"function\":{\"name\":\"GetRecordDetails_179bY000001mc8w\"}},{\"function\":{\"name\":\"LNA_Nova_Update_Lead_Record_179bY000001mc8w\"}},{\"function\":{\"name\":\"LNA_Nova_Update_Lead_Record_179bY000001mc8w\"}}]]",
+        "outcome": "Subject: Re: [reuse the subject from the previous email thread]\n\nHi Elaina,\n\nThanks for sharing your interest in learning more about our products! I&#39;d like to connect you with Tuan Abdeen for a quick 15-minute chat to explore how we can support your needs.\n\nHere&#39;s a link to find a time that works for you:\nhttps://outlook.office.com/bookwithme/user/48c764a4c11d40839c9e04e9b980e268@statista.com/meetingtype/SVRwCe7HMUGxuT6WGxi68g2?anonymous&amp;ismsaljsauthenabled&amp;ep=mLinkFromTile",
+        "topic": "sales_sdr_agent_MeetingResponse"
+      },
+      "inputs": {
+        "utterance": "I'm interested to learn more about your products."
+      },
+      "startTime": "2026-04-30T11:14:03Z",
+      "status": "COMPLETED",
+      "testNumber": 1,
+      "testResults": [
+        {
+          "actualValue": "sales_sdr_agent_MeetingResponse",
+          "endTime": "2026-04-30T11:14:30Z",
+          "errorCode": 0,
+          "expectedValue": "sales_sdr_agent_MeetingResponse",
+          "metricLabel": "topic_assertion",
+          "name": "topic_assertion",
+          "result": "PASS",
+          "score": 1,
+          "startTime": "2026-04-30T11:14:07Z",
+          "status": "COMPLETED",
+          "metricExplainability": ""
+        },
+        {
+          "actualValue": "['GetRecordDetails', 'LNA_Nova_Update_Lead_Record', 'LNA_Nova_Update_Lead_Record']",
+          "endTime": "2026-04-30T11:14:30Z",
+          "errorCode": 0,
+          "expectedValue": "['GetRecordDetails']",
+          "metricLabel": "actions_assertion",
+          "name": "actions_assertion",
+          "result": "PASS",
+          "score": 1,
+          "startTime": "2026-04-30T11:14:07Z",
+          "status": "COMPLETED",
+          "metricExplainability": ""
+        },
+        {
+          "actualValue": "Subject: Re: [reuse the subject from the previous email thread]\n\nHi Elaina,\n\nThanks for sharing your interest in learning more about our products! I'd like to connect you with Tuan Abdeen for a quick 15-minute chat to explore how we can support your needs.\n\nHere's a link to find a time that works for you:\nhttps://outlook.office.com/bookwithme/user/48c764a4c11d40839c9e04e9b980e268@statista.com/meetingtype/SVRwCe7HMUGxuT6WGxi68g2?anonymous&ismsaljsauthenabled&ep=mLinkFromTile",
+          "endTime": "2026-04-30T11:14:30Z",
+          "errorCode": 0,
+          "expectedValue": "A reply email is successfully drafted.",
+          "metricExplainability": "The bot's response drafts an email with a subject, greeting, body, and a scheduling link, which aligns with the expected outcome of drafting a reply email. The response is clear, complete, and contains relevant information without unnecessary details. It does not prompt for additional information unnecessarily, as the user's query was general and the bot provided a direct action.",
+          "metricLabel": "output_validation",
+          "name": "output_validation",
+          "result": "PASS",
+          "score": 5,
+          "startTime": "2026-04-30T11:14:07Z",
+          "status": "COMPLETED"
+        }
+      ]
+    },
+    {
+      "endTime": "2026-04-30T11:14:29Z",
+      "generatedData": {
+        "actionsSequence": "[&#39;GetRecordDetails&#39;, &#39;LNA_Nova_Update_Lead_Record&#39;, &#39;LNA_Nova_Update_Lead_Record&#39;]",
+        "invokedActions": "[[{\"function\":{\"name\":\"GetRecordDetails_179bY000001mc8w\"}},{\"function\":{\"name\":\"LNA_Nova_Update_Lead_Record_179bY000001mc8w\"}},{\"function\":{\"name\":\"LNA_Nova_Update_Lead_Record_179bY000001mc8w\"}}]]",
+        "outcome": "Subject: Re: [reuse the subject from the previous email thread]\n\nHi James,\n\nI&#39;m glad to hear you&#39;re interested in learning more about our products! I&#39;d like to connect you with Tuan Abdeen for a quick 15-minute chat to explore how we can support your needs.\n\nHere&#39;s a link to find a time that works for you:\nhttps://outlook.office.com/bookwithme/user/48c764a4c11d40839c9e04e9b980e268@statista.com/meetingtype/SVRwCe7HMUGxuT6WGxi68g2?anonymous&amp;ismsaljsauthenabled&amp;ep=mLinkFromTile",
+        "topic": "sales_sdr_agent_MeetingResponse"
+      },
+      "inputs": {
+        "utterance": "I'm interested to learn more about your products."
+      },
+      "startTime": "2026-04-30T11:14:03Z",
+      "status": "COMPLETED",
+      "testNumber": 2,
+      "testResults": [
+        {
+          "actualValue": "sales_sdr_agent_MeetingResponse",
+          "endTime": "2026-04-30T11:14:30Z",
+          "errorCode": 0,
+          "expectedValue": "sales_sdr_agent_MeetingResponse",
+          "metricLabel": "topic_assertion",
+          "name": "topic_assertion",
+          "result": "PASS",
+          "score": 1,
+          "startTime": "2026-04-30T11:14:08Z",
+          "status": "COMPLETED",
+          "metricExplainability": ""
+        },
+        {
+          "actualValue": "['GetRecordDetails', 'LNA_Nova_Update_Lead_Record', 'LNA_Nova_Update_Lead_Record']",
+          "endTime": "2026-04-30T11:14:30Z",
+          "errorCode": 0,
+          "expectedValue": "['GetRecordDetails']",
+          "metricLabel": "actions_assertion",
+          "name": "actions_assertion",
+          "result": "PASS",
+          "score": 1,
+          "startTime": "2026-04-30T11:14:08Z",
+          "status": "COMPLETED",
+          "metricExplainability": ""
+        },
+        {
+          "actualValue": "Subject: Re: [reuse the subject from the previous email thread]\n\nHi James,\n\nI'm glad to hear you're interested in learning more about our products! I'd like to connect you with Tuan Abdeen for a quick 15-minute chat to explore how we can support your needs.\n\nHere's a link to find a time that works for you:\nhttps://outlook.office.com/bookwithme/user/48c764a4c11d40839c9e04e9b980e268@statista.com/meetingtype/SVRwCe7HMUGxuT6WGxi68g2?anonymous&ismsaljsauthenabled&ep=mLinkFromTile",
+          "endTime": "2026-04-30T11:14:30Z",
+          "errorCode": 0,
+          "expectedValue": "A reply email is successfully drafted.",
+          "metricExplainability": "The bot's response drafts an email with a subject, greeting, body, and a scheduling link, which aligns with the expected outcome of drafting a reply email. The placeholders like James and 48c764a4c11d40839c9e04e9b980e268@statista.com suggest that the bot would retrieve these from the CRM, which is appropriate. The response is clear, complete, and contains no irrelevant information.",
+          "metricLabel": "output_validation",
+          "name": "output_validation",
+          "result": "PASS",
+          "score": 5,
+          "startTime": "2026-04-30T11:14:08Z",
+          "status": "COMPLETED"
+        }
+      ]
+    }
+  ]
+}

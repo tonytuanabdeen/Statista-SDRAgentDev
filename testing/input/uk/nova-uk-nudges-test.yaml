@@ -1,0 +1,28 @@
+# Description: Tests Initial Outreach topic for LNA Nova SDR agent with Lead 00QbY00000Mnk29UAB (Tuan Abdeen, CFO @ SFDC, Telecom/IT)
+
+name: "Nova Follow-up Nudge Test {DATETIME}"
+subjectType: AGENT
+subjectName: {AGENT_API_NAME}
+
+testCases:
+  - utterance: "Draft a nudge email to a lead. Do not schedule the email."
+    expectedTopic: sales_sdr_agent_FollowUpOutreach
+    expectedActions:
+      - GetRecordDetails
+    expectedOutcome: "A nudge email is successfully drafted."
+    contextVariables:
+      - name: "$Context.OrchestrationStage"
+        value: "Nudge"
+      - name: "$Context.currentObjectApiName"
+        value: "Lead"
+      - name: "$Context.currentRecordId"
+        value: {DYNAMIC_LEAD_RECORD_ID}
+      - name: "$Context.ContactId"
+        value: {DYNAMIC_LEAD_RECORD_ID}      
+      - name: "$Context.emailBody"
+        value: {PREVIOUS_EMAIL_BODY}
+      - name: "$Context.isFinalMessage"
+        value: FALSE
+      - name: "$Context.actionCadenceStepTrackerId"
+        value: "8HF000000000000"
+      

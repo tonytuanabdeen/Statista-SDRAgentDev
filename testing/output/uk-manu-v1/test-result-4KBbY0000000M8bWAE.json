@@ -1,0 +1,456 @@
+{
+  "endTime": "2026-04-30T10:26:37Z",
+  "startTime": "2026-04-30T10:25:17Z",
+  "status": "COMPLETED",
+  "subjectName": "Nova_UK_Manu_IO_V1_Nova",
+  "testCases": [
+    {
+      "endTime": "2026-04-30T10:25:38Z",
+      "generatedData": {
+        "actionsSequence": "[&#39;LNA_Nova_Initial_Outreach&#39;]",
+        "invokedActions": "[[{\"function\":{\"name\":\"LNA_Nova_Initial_Outreach_179bY000001jql6\"}}]]",
+        "outcome": "Here is the initial outreach email generated for the lead:\n\n**Subject:** A clearer view of your target audience\n\n**Body:**\nHi Saarah,\n\nMarketing leaders like yourself often find it hard to quantify audiences, which can lead to weak targeting.\n\nStatista helps teams gain a deep understanding of consumers across segments, moving beyond demographics to provide critical behaviour and attitude data.\n\nWould a 15-minute call be worth it to see if this could be useful? Or if you&#39;ve already found what you needed, no worries at all.\n\nLet me know if you need anything else!",
+        "topic": "sales_sdr_agent_InitialOutreach"
+      },
+      "inputs": {
+        "utterance": "Generate an initial outreach email for this lead"
+      },
+      "startTime": "2026-04-30T10:25:17Z",
+      "status": "COMPLETED",
+      "testNumber": 1,
+      "testResults": [
+        {
+          "actualValue": "sales_sdr_agent_InitialOutreach",
+          "endTime": "2026-04-30T10:25:40Z",
+          "errorCode": 0,
+          "expectedValue": "sales_sdr_agent_InitialOutreach",
+          "metricLabel": "topic_assertion",
+          "name": "topic_assertion",
+          "result": "PASS",
+          "score": 1,
+          "startTime": "2026-04-30T10:25:19Z",
+          "status": "COMPLETED",
+          "metricExplainability": ""
+        },
+        {
+          "actualValue": "['LNA_Nova_Initial_Outreach']",
+          "endTime": "2026-04-30T10:25:40Z",
+          "errorCode": 0,
+          "expectedValue": "['LNA_Nova_Initial_Outreach']",
+          "metricLabel": "actions_assertion",
+          "name": "actions_assertion",
+          "result": "PASS",
+          "score": 1,
+          "startTime": "2026-04-30T10:25:19Z",
+          "status": "COMPLETED",
+          "metricExplainability": ""
+        },
+        {
+          "actualValue": "Here is the initial outreach email generated for the lead:\n\n**Subject:** A clearer view of your target audience\n\n**Body:**\nHi Saarah,\n\nMarketing leaders like yourself often find it hard to quantify audiences, which can lead to weak targeting.\n\nStatista helps teams gain a deep understanding of consumers across segments, moving beyond demographics to provide critical behaviour and attitude data.\n\nWould a 15-minute call be worth it to see if this could be useful? Or if you've already found what you needed, no worries at all.\n\nLet me know if you need anything else!",
+          "endTime": "2026-04-30T10:25:40Z",
+          "errorCode": 0,
+          "expectedValue": "Agent generates a personalized first-touch outreach email with a subject line and greeting, using UK spelling, without sharing prices or recommending specific meeting times",
+          "metricExplainability": "The bot's response aligns with the expected outcome by generating a personalized outreach email with a subject line and greeting. It uses UK spelling and avoids sharing prices or recommending specific meeting times. The email is clear, complete, and contains relevant information, meeting the criteria for a perfect alignment.",
+          "metricLabel": "output_validation",
+          "name": "output_validation",
+          "result": "PASS",
+          "score": 5,
+          "startTime": "2026-04-30T10:25:19Z",
+          "status": "COMPLETED"
+        }
+      ]
+    },
+    {
+      "endTime": "2026-04-30T10:25:38Z",
+      "generatedData": {
+        "actionsSequence": "[&#39;LNA_Nova_Initial_Outreach&#39;]",
+        "invokedActions": "[[{\"function\":{\"name\":\"LNA_Nova_Initial_Outreach_179bY000001jql6\"}}]]",
+        "outcome": "Here is the initial outreach email generated for the lead:\n\n**Subject:** Integrating trusted external data\n\n**Body:**\nHi Markos,\n\nAs Head of Analytics, you likely encounter challenges with manual external data ingestion, which can be time-consuming and error-prone.\n\nStatista provides curated and sourced external data, enabling seamless integration into your existing systems and supporting data governance initiatives. This helps in feeding verified data into your dashboards and AI tools.\n\nWould a 15-minute call be worth it to see if this could be useful? Or if you&#39;ve already found what you needed, no worries at all.\n\nLet me know if you need further assistance!",
+        "topic": "sales_sdr_agent_InitialOutreach"
+      },
+      "inputs": {
+        "utterance": "Generate an initial outreach email for this lead"
+      },
+      "startTime": "2026-04-30T10:25:17Z",
+      "status": "COMPLETED",
+      "testNumber": 2,
+      "testResults": [
+        {
+          "actualValue": "sales_sdr_agent_InitialOutreach",
+          "endTime": "2026-04-30T10:25:40Z",
+          "errorCode": 0,
+          "expectedValue": "sales_sdr_agent_InitialOutreach",
+          "metricLabel": "topic_assertion",
+          "name": "topic_assertion",
+          "result": "PASS",
+          "score": 1,
+          "startTime": "2026-04-30T10:25:19Z",
+          "status": "COMPLETED",
+          "metricExplainability": ""
+        },
+        {
+          "actualValue": "['LNA_Nova_Initial_Outreach']",
+          "endTime": "2026-04-30T10:25:40Z",
+          "errorCode": 0,
+          "expectedValue": "['LNA_Nova_Initial_Outreach']",
+          "metricLabel": "actions_assertion",
+          "name": "actions_assertion",
+          "result": "PASS",
+          "score": 1,
+          "startTime": "2026-04-30T10:25:19Z",
+          "status": "COMPLETED",
+          "metricExplainability": ""
+        },
+        {
+          "actualValue": "Here is the initial outreach email generated for the lead:\n\n**Subject:** Integrating trusted external data\n\n**Body:**\nHi Markos,\n\nAs Head of Analytics, you likely encounter challenges with manual external data ingestion, which can be time-consuming and error-prone.\n\nStatista provides curated and sourced external data, enabling seamless integration into your existing systems and supporting data governance initiatives. This helps in feeding verified data into your dashboards and AI tools.\n\nWould a 15-minute call be worth it to see if this could be useful? Or if you've already found what you needed, no worries at all.\n\nLet me know if you need further assistance!",
+          "endTime": "2026-04-30T10:25:40Z",
+          "errorCode": 0,
+          "expectedValue": "Agent generates a personalized first-touch outreach email with a subject line and greeting, using UK spelling, without sharing prices or recommending specific meeting times",
+          "metricExplainability": "The bot's response includes a personalized email with a subject line and greeting, uses UK spelling, and does not share prices or recommend specific meeting times. It aligns with the expected response, though it includes a call to action (a 15-minute call) which is not explicitly prohibited by the expected response. However, the expected response only states not to recommend specific meeting times, and a 15-minute call is a general suggestion, not a specific time. The response is clear, complete, and precise, with no irrelevant information.",
+          "metricLabel": "output_validation",
+          "name": "output_validation",
+          "result": "PASS",
+          "score": 5,
+          "startTime": "2026-04-30T10:25:19Z",
+          "status": "COMPLETED"
+        }
+      ]
+    },
+    {
+      "endTime": "2026-04-30T10:25:38Z",
+      "generatedData": {
+        "actionsSequence": "[&#39;LNA_Nova_Initial_Outreach&#39;]",
+        "invokedActions": "[[{\"function\":{\"name\":\"LNA_Nova_Initial_Outreach_179bY000001jql6\"}}]]",
+        "outcome": "Here is the initial outreach email generated for the lead:\n\n**Subject:** Strategy built on evidence rather than assumptions\n\n**Body:**\nHi Elaina,\n\nAs VP of Strategy, you likely understand the challenge of slow access to market evidence, which often delays strategy cycles.\n\nStatista provides fast research across industries and offers a unified platform for consistent analysis. This reduces the time spent on research and formatting.\n\nWould a 15-minute call be worth it to see if this could be useful? Or if you&#39;ve already found what you needed, no worries at all.\n\nLet me know if you need further assistance!",
+        "topic": "sales_sdr_agent_InitialOutreach"
+      },
+      "inputs": {
+        "utterance": "Generate an initial outreach email for this lead"
+      },
+      "startTime": "2026-04-30T10:25:17Z",
+      "status": "COMPLETED",
+      "testNumber": 3,
+      "testResults": [
+        {
+          "actualValue": "sales_sdr_agent_InitialOutreach",
+          "endTime": "2026-04-30T10:25:39Z",
+          "errorCode": 0,
+          "expectedValue": "sales_sdr_agent_InitialOutreach",
+          "metricLabel": "topic_assertion",
+          "name": "topic_assertion",
+          "result": "PASS",
+          "score": 1,
+          "startTime": "2026-04-30T10:25:19Z",
+          "status": "COMPLETED",
+          "metricExplainability": ""
+        },
+        {
+          "actualValue": "['LNA_Nova_Initial_Outreach']",
+          "endTime": "2026-04-30T10:25:39Z",
+          "errorCode": 0,
+          "expectedValue": "['LNA_Nova_Initial_Outreach']",
+          "metricLabel": "actions_assertion",
+          "name": "actions_assertion",
+          "result": "PASS",
+          "score": 1,
+          "startTime": "2026-04-30T10:25:19Z",
+          "status": "COMPLETED",
+          "metricExplainability": ""
+        },
+        {
+          "actualValue": "Here is the initial outreach email generated for the lead:\n\n**Subject:** Strategy built on evidence rather than assumptions\n\n**Body:**\nHi Elaina,\n\nAs VP of Strategy, you likely understand the challenge of slow access to market evidence, which often delays strategy cycles.\n\nStatista provides fast research across industries and offers a unified platform for consistent analysis. This reduces the time spent on research and formatting.\n\nWould a 15-minute call be worth it to see if this could be useful? Or if you've already found what you needed, no worries at all.\n\nLet me know if you need further assistance!",
+          "endTime": "2026-04-30T10:25:39Z",
+          "errorCode": 0,
+          "expectedValue": "Agent generates a personalized first-touch outreach email with a subject line and greeting, using UK spelling, without sharing prices or recommending specific meeting times",
+          "metricExplainability": "The bot's response aligns with the expected outcome by generating a personalized outreach email with a subject line and greeting. However, it includes a specific recommendation for a 15-minute call, which violates the instruction to avoid recommending specific meeting times. This deviation reduces the alignment score.",
+          "metricLabel": "output_validation",
+          "name": "output_validation",
+          "result": "PASS",
+          "score": 3,
+          "startTime": "2026-04-30T10:25:19Z",
+          "status": "COMPLETED"
+        }
+      ]
+    },
+    {
+      "endTime": "2026-04-30T10:25:43Z",
+      "generatedData": {
+        "actionsSequence": "[&#39;LNA_Nova_Initial_Outreach&#39;]",
+        "invokedActions": "[[{\"function\":{\"name\":\"LNA_Nova_Initial_Outreach_179bY000001jql6\"}}]]",
+        "outcome": "Here is the initial outreach email generated for the lead:\n\n**Subject:** A clearer view of where your market is heading\n\n**Body:**\nHi James,\n\nAs Chief Product Officer, you likely know the challenge of making data-informed roadmap decisions without external market context.\n\nStatista helps product leaders like you understand market adoption and trends, validate opportunity sizing, and gain competitive visibility with verified industry benchmarks.\n\nWould a 15-minute call be worth it to see if this could be useful? Or if you&#39;ve already found what you needed, no worries at all.\n\nLet me know if you need further assistance!",
+        "topic": "sales_sdr_agent_InitialOutreach"
+      },
+      "inputs": {
+        "utterance": "Generate an initial outreach email for this lead"
+      },
+      "startTime": "2026-04-30T10:25:17Z",
+      "status": "COMPLETED",
+      "testNumber": 4,
+      "testResults": [
+        {
+          "actualValue": "sales_sdr_agent_InitialOutreach",
+          "endTime": "2026-04-30T10:25:44Z",
+          "errorCode": 0,
+          "expectedValue": "sales_sdr_agent_InitialOutreach",
+          "metricLabel": "topic_assertion",
+          "name": "topic_assertion",
+          "result": "PASS",
+          "score": 1,
+          "startTime": "2026-04-30T10:25:19Z",
+          "status": "COMPLETED",
+          "metricExplainability": ""
+        },
+        {
+          "actualValue": "['LNA_Nova_Initial_Outreach']",
+          "endTime": "2026-04-30T10:25:44Z",
+          "errorCode": 0,
+          "expectedValue": "['LNA_Nova_Initial_Outreach']",
+          "metricLabel": "actions_assertion",
+          "name": "actions_assertion",
+          "result": "PASS",
+          "score": 1,
+          "startTime": "2026-04-30T10:25:19Z",
+          "status": "COMPLETED",
+          "metricExplainability": ""
+        },
+        {
+          "actualValue": "Here is the initial outreach email generated for the lead:\n\n**Subject:** A clearer view of where your market is heading\n\n**Body:**\nHi James,\n\nAs Chief Product Officer, you likely know the challenge of making data-informed roadmap decisions without external market context.\n\nStatista helps product leaders like you understand market adoption and trends, validate opportunity sizing, and gain competitive visibility with verified industry benchmarks.\n\nWould a 15-minute call be worth it to see if this could be useful? Or if you've already found what you needed, no worries at all.\n\nLet me know if you need further assistance!",
+          "endTime": "2026-04-30T10:25:44Z",
+          "errorCode": 0,
+          "expectedValue": "Agent generates a personalized first-touch outreach email with a subject line and greeting, using UK spelling, without sharing prices or recommending specific meeting times",
+          "metricExplainability": "The bot's response aligns with the expected response by generating a personalized outreach email with a subject line and greeting. It uses UK spelling and avoids sharing prices or recommending specific meeting times. The response is clear, complete, and contains all relevant information, meeting the criteria for a perfect alignment.",
+          "metricLabel": "output_validation",
+          "name": "output_validation",
+          "result": "PASS",
+          "score": 5,
+          "startTime": "2026-04-30T10:25:19Z",
+          "status": "COMPLETED"
+        }
+      ]
+    },
+    {
+      "endTime": "2026-04-30T10:25:38Z",
+      "generatedData": {
+        "actionsSequence": "[&#39;LNA_Nova_Initial_Outreach&#39;]",
+        "invokedActions": "[[{\"function\":{\"name\":\"LNA_Nova_Initial_Outreach_179bY000001jql6\"}}]]",
+        "outcome": "Here is the initial outreach email generated for the lead:\n\n**Subject:** Reducing ramp up time on new sectors\n\n**Body:**\nHi Priiaa,\n\nI noticed you recently explored content on our website. As a Senior Consultant at Ironpaper, you likely navigate tight timelines and the need to quickly understand unfamiliar sectors for new client engagements.\n\nStatista provides cross-industry coverage with ready visuals, allowing you to cut research time and produce credible deliverables faster.\n\nWould a 15-minute call be worth it to see if this could be useful? Or if you&#39;ve already found what you needed, no worries at all.\n\nLet me know if you need further assistance!",
+        "topic": "sales_sdr_agent_InitialOutreach"
+      },
+      "inputs": {
+        "utterance": "Generate an initial outreach email for this lead"
+      },
+      "startTime": "2026-04-30T10:25:17Z",
+      "status": "COMPLETED",
+      "testNumber": 5,
+      "testResults": [
+        {
+          "actualValue": "sales_sdr_agent_InitialOutreach",
+          "endTime": "2026-04-30T10:25:40Z",
+          "errorCode": 0,
+          "expectedValue": "sales_sdr_agent_InitialOutreach",
+          "metricLabel": "topic_assertion",
+          "name": "topic_assertion",
+          "result": "PASS",
+          "score": 1,
+          "startTime": "2026-04-30T10:25:19Z",
+          "status": "COMPLETED",
+          "metricExplainability": ""
+        },
+        {
+          "actualValue": "['LNA_Nova_Initial_Outreach']",
+          "endTime": "2026-04-30T10:25:40Z",
+          "errorCode": 0,
+          "expectedValue": "['LNA_Nova_Initial_Outreach']",
+          "metricLabel": "actions_assertion",
+          "name": "actions_assertion",
+          "result": "PASS",
+          "score": 1,
+          "startTime": "2026-04-30T10:25:19Z",
+          "status": "COMPLETED",
+          "metricExplainability": ""
+        },
+        {
+          "actualValue": "Here is the initial outreach email generated for the lead:\n\n**Subject:** Reducing ramp up time on new sectors\n\n**Body:**\nHi Priiaa,\n\nI noticed you recently explored content on our website. As a Senior Consultant at Ironpaper, you likely navigate tight timelines and the need to quickly understand unfamiliar sectors for new client engagements.\n\nStatista provides cross-industry coverage with ready visuals, allowing you to cut research time and produce credible deliverables faster.\n\nWould a 15-minute call be worth it to see if this could be useful? Or if you've already found what you needed, no worries at all.\n\nLet me know if you need further assistance!",
+          "endTime": "2026-04-30T10:25:40Z",
+          "errorCode": 0,
+          "expectedValue": "Agent generates a personalized first-touch outreach email with a subject line and greeting, using UK spelling, without sharing prices or recommending specific meeting times",
+          "metricExplainability": "The bot's response aligns with the expected outcome by generating a personalized outreach email with a subject line and greeting. It uses UK spelling and avoids sharing prices or recommending specific meeting times. The response is clear, complete, and contains all relevant information, meeting the criteria for a perfect alignment.",
+          "metricLabel": "output_validation",
+          "name": "output_validation",
+          "result": "PASS",
+          "score": 5,
+          "startTime": "2026-04-30T10:25:19Z",
+          "status": "COMPLETED"
+        }
+      ]
+    },
+    {
+      "endTime": "2026-04-30T10:26:32Z",
+      "generatedData": {
+        "actionsSequence": "[&#39;LNA_Nova_Initial_Outreach&#39;]",
+        "invokedActions": "[[{\"function\":{\"name\":\"LNA_Nova_Initial_Outreach_179bY000001jql6\"}}]]",
+        "outcome": "Here is the initial outreach email generated for the lead:\n\n**Subject:** Faster decisions with less guesswork\n\n**Body:**\nHi Aaesha,\n\nAs CEO, you lead Bay Leaf Digital and likely need to make fast decisions without extensive dedicated research resources.\n\nStatista provides instant access to professional data and charts, allowing you to validate market assumptions quickly and present credible information to investors and partners.\n\nWould a 15-minute call be worth it to see if this could be useful? Or if you&#39;ve already found what you needed, no worries at all.\n\nLet me know if you have any other questions!",
+        "topic": "sales_sdr_agent_InitialOutreach"
+      },
+      "inputs": {
+        "utterance": "Generate an initial outreach email for this lead"
+      },
+      "startTime": "2026-04-30T10:25:17Z",
+      "status": "COMPLETED",
+      "testNumber": 6,
+      "testResults": [
+        {
+          "actualValue": "sales_sdr_agent_InitialOutreach",
+          "endTime": "2026-04-30T10:26:33Z",
+          "errorCode": 0,
+          "expectedValue": "sales_sdr_agent_InitialOutreach",
+          "metricLabel": "topic_assertion",
+          "name": "topic_assertion",
+          "result": "PASS",
+          "score": 1,
+          "startTime": "2026-04-30T10:26:19Z",
+          "status": "COMPLETED",
+          "metricExplainability": ""
+        },
+        {
+          "actualValue": "['LNA_Nova_Initial_Outreach']",
+          "endTime": "2026-04-30T10:26:33Z",
+          "errorCode": 0,
+          "expectedValue": "['LNA_Nova_Initial_Outreach']",
+          "metricLabel": "actions_assertion",
+          "name": "actions_assertion",
+          "result": "PASS",
+          "score": 1,
+          "startTime": "2026-04-30T10:26:19Z",
+          "status": "COMPLETED",
+          "metricExplainability": ""
+        },
+        {
+          "actualValue": "Here is the initial outreach email generated for the lead:\n\n**Subject:** Faster decisions with less guesswork\n\n**Body:**\nHi Aaesha,\n\nAs CEO, you lead Bay Leaf Digital and likely need to make fast decisions without extensive dedicated research resources.\n\nStatista provides instant access to professional data and charts, allowing you to validate market assumptions quickly and present credible information to investors and partners.\n\nWould a 15-minute call be worth it to see if this could be useful? Or if you've already found what you needed, no worries at all.\n\nLet me know if you have any other questions!",
+          "endTime": "2026-04-30T10:26:33Z",
+          "errorCode": 0,
+          "expectedValue": "Agent generates a personalized first-touch outreach email with a subject line and greeting, using UK spelling, without sharing prices or recommending specific meeting times",
+          "metricExplainability": "The bot's response aligns with the expected outcome by generating a personalized outreach email with a subject line and greeting. It uses UK spelling and avoids sharing prices or recommending specific meeting times. The response is clear, complete, and contains all relevant information, meeting the criteria for a perfect alignment.",
+          "metricLabel": "output_validation",
+          "name": "output_validation",
+          "result": "PASS",
+          "score": 5,
+          "startTime": "2026-04-30T10:26:19Z",
+          "status": "COMPLETED"
+        }
+      ]
+    },
+    {
+      "endTime": "2026-04-30T10:26:33Z",
+      "generatedData": {
+        "actionsSequence": "[&#39;LNA_Nova_Initial_Outreach&#39;]",
+        "invokedActions": "[[{\"function\":{\"name\":\"LNA_Nova_Initial_Outreach_179bY000001jql6\"}}]]",
+        "outcome": "Here is the initial outreach email generated for the lead:\n\n**Subject:** Simplifying research requests\n\n**Body:**  \nHi Zofia,\n\nI understand that last-minute research requests for your executive can create time pressure. Statista helps Executive Assistants respond quickly to these requests.\n\nStatista provides reliable, trusted data for various topics, helping you prepare professional information swiftly. This can make the research process easier and more efficient.\n\nHappy to share a few relevant examples. Would you like to take a quick look?\n\nLet me know if you need further assistance!",
+        "topic": "sales_sdr_agent_InitialOutreach"
+      },
+      "inputs": {
+        "utterance": "Generate an initial outreach email for this lead"
+      },
+      "startTime": "2026-04-30T10:25:17Z",
+      "status": "COMPLETED",
+      "testNumber": 7,
+      "testResults": [
+        {
+          "actualValue": "sales_sdr_agent_InitialOutreach",
+          "endTime": "2026-04-30T10:26:37Z",
+          "errorCode": 0,
+          "expectedValue": "sales_sdr_agent_InitialOutreach",
+          "metricLabel": "topic_assertion",
+          "name": "topic_assertion",
+          "result": "PASS",
+          "score": 1,
+          "startTime": "2026-04-30T10:26:19Z",
+          "status": "COMPLETED",
+          "metricExplainability": ""
+        },
+        {
+          "actualValue": "['LNA_Nova_Initial_Outreach']",
+          "endTime": "2026-04-30T10:26:37Z",
+          "errorCode": 0,
+          "expectedValue": "['LNA_Nova_Initial_Outreach']",
+          "metricLabel": "actions_assertion",
+          "name": "actions_assertion",
+          "result": "PASS",
+          "score": 1,
+          "startTime": "2026-04-30T10:26:19Z",
+          "status": "COMPLETED",
+          "metricExplainability": ""
+        },
+        {
+          "actualValue": "Here is the initial outreach email generated for the lead:\n\n**Subject:** Simplifying research requests\n\n**Body:**  \nHi Zofia,\n\nI understand that last-minute research requests for your executive can create time pressure. Statista helps Executive Assistants respond quickly to these requests.\n\nStatista provides reliable, trusted data for various topics, helping you prepare professional information swiftly. This can make the research process easier and more efficient.\n\nHappy to share a few relevant examples. Would you like to take a quick look?\n\nLet me know if you need further assistance!",
+          "endTime": "2026-04-30T10:26:37Z",
+          "errorCode": 0,
+          "expectedValue": "Agent generates a personalized first-touch outreach email with a subject line and greeting, using UK spelling, without sharing prices or recommending specific meeting times",
+          "metricExplainability": "The bot response generates a personalized outreach email with a subject line and greeting, uses UK spelling, and avoids sharing prices or recommending specific meeting times, aligning with the expected response. The email is clear, complete, and contains relevant information.",
+          "metricLabel": "output_validation",
+          "name": "output_validation",
+          "result": "PASS",
+          "score": 5,
+          "startTime": "2026-04-30T10:26:19Z",
+          "status": "COMPLETED"
+        }
+      ]
+    },
+    {
+      "endTime": "2026-04-30T10:26:34Z",
+      "generatedData": {
+        "actionsSequence": "[&#39;LNA_Nova_Initial_Outreach&#39;]",
+        "invokedActions": "[[{\"function\":{\"name\":\"LNA_Nova_Initial_Outreach_179bY000001jql6\"}}]]",
+        "outcome": "Here is the initial outreach email generated for the lead:\n\n**Subject:** A clearer view of where your market is heading\n\n**Body:**\nHi Kenji,\n\nManufacturing teams often face challenges tracking global demand shifts and long planning horizons.\n\nStatista provides comparable data across countries for global operations and industry trends to support your long-term CapEx decisions.\n\nWould a 15-minute call be worth it to see if this could be useful? Or if you&#39;ve already found what you needed, no worries at all.\n\nLet me know if you need further assistance!",
+        "topic": "sales_sdr_agent_InitialOutreach"
+      },
+      "inputs": {
+        "utterance": "Generate an initial outreach email for this lead"
+      },
+      "startTime": "2026-04-30T10:25:17Z",
+      "status": "COMPLETED",
+      "testNumber": 8,
+      "testResults": [
+        {
+          "actualValue": "sales_sdr_agent_InitialOutreach",
+          "endTime": "2026-04-30T10:26:35Z",
+          "errorCode": 0,
+          "expectedValue": "sales_sdr_agent_InitialOutreach",
+          "metricLabel": "topic_assertion",
+          "name": "topic_assertion",
+          "result": "PASS",
+          "score": 1,
+          "startTime": "2026-04-30T10:26:19Z",
+          "status": "COMPLETED",
+          "metricExplainability": ""
+        },
+        {
+          "actualValue": "['LNA_Nova_Initial_Outreach']",
+          "endTime": "2026-04-30T10:26:35Z",
+          "errorCode": 0,
+          "expectedValue": "['LNA_Nova_Initial_Outreach']",
+          "metricLabel": "actions_assertion",
+          "name": "actions_assertion",
+          "result": "PASS",
+          "score": 1,
+          "startTime": "2026-04-30T10:26:19Z",
+          "status": "COMPLETED",
+          "metricExplainability": ""
+        },
+        {
+          "actualValue": "Here is the initial outreach email generated for the lead:\n\n**Subject:** A clearer view of where your market is heading\n\n**Body:**\nHi Kenji,\n\nManufacturing teams often face challenges tracking global demand shifts and long planning horizons.\n\nStatista provides comparable data across countries for global operations and industry trends to support your long-term CapEx decisions.\n\nWould a 15-minute call be worth it to see if this could be useful? Or if you've already found what you needed, no worries at all.\n\nLet me know if you need further assistance!",
+          "endTime": "2026-04-30T10:26:35Z",
+          "errorCode": 0,
+          "expectedValue": "Agent generates a personalized first-touch outreach email with a subject line and greeting, using UK spelling, without sharing prices or recommending specific meeting times",
+          "metricExplainability": "The bot's response includes a personalized email with a subject line and greeting, uses UK spelling, and does not share prices or recommend specific meeting times. It aligns with the expected response, though it could be improved by ensuring the greeting uses UK spelling (e.g., 'Hi' is acceptable, but the rest of the email could be more UK-specific). However, the response meets the core requirements.",
+          "metricLabel": "output_validation",
+          "name": "output_validation",
+          "result": "PASS",
+          "score": 4,
+          "startTime": "2026-04-30T10:26:19Z",
+          "status": "COMPLETED"
+        }
+      ]
+    }
+  ]
+}

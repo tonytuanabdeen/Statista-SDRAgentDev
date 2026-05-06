@@ -1,0 +1,37 @@
+## init
+- {AGENT_API_NAME} is set to "Agentforce_Sales_Development_Rep_2". 
+- {OUTPUT_FOLDER} is set to "@testing/output/uk-telco-it-v2".
+
+## 1. Create the Test Lead Records
+ - {UK_TELCO_IT_LEAD_IMPORT_FILE} is set to @testing/input/uk/uk_telco_IT_leads_import.csv.
+ - Create Salesforce test Lead records in the default target org using the data provided in {UK_TELCO_IT_LEAD_IMPORT_FILE}.
+
+## 2. Test Initial Outreach - All Test Leads
+- Execute the following /uk-test-references/initial-outreach.md
+- INPUT_INITIAL_OUTREACH_TEST is set to "@testing/input/uk/nova-uk-initial-outreach-test.yaml".
+- {LEAD_RECORD_IDS} to store the Salesforce Record ID of each newly created Lead corresponding to every row in the CSV file. Ensure that the ID captured is the 15-digit format, not the 18-digit version.
+- {OUTPUT_FILE_TEST_SPECS} is set to "nova-uk-telco-IT-initial-outreach-test-spec.yaml".
+- {OUTPUT_FILE_TEST_RESULTS} is set to "Nova-uk-telecommunication-IT-initial-outreach-test-results.md".
+
+## 3. Test Follow-up Nudges - with first 2 Lead Records
+- Execute the following /uk-test-references/nudges.md
+- INPUT_NUDGES_TEST is set to "@testing/input/uk/nova-uk-nudges-test.yaml".
+- {LEAD_RECORD_IDS} is set with the data in {UK_TELCO_IT_LEAD_IMPORT_FILE}, query the first 2 Salesforce Lead records by Email in the default target org. Ensure that the ID captured is the 15-digit format, not the 18-digit version.
+- {PREVIOUS_EMAIL_SUBJECT} is obtained from the output generated in {OUTPUT_FOLDER}/{OUTPUT_FILE_TEST_RESULTS}.
+- {PREVIOUS_EMAIL_BODY} is obtained from the output generated in {OUTPUT_FOLDER}/{OUTPUT_FILE_TEST_RESULTS}.
+- {OUTPUT_FILE_NUDGES_TEST_SPECS} is set to "nova-uk-telco-IT-nudges-test-spec.yaml".
+- {OUTPUT_FILE_NUDGES_TEST_RESULTS} is set to "Nova-uk-telecommunication-IT-nudges-test-results.md".
+
+## 4. Test Positive Responses - with 2 Lead Records
+- Execute the following /uk-test-references/positive-response.md
+- INPUT_POSITIVE_TEST is set to "@testing/input/uk/nova-uk-positive-response-test.yaml".
+- {LEAD_RECORD_IDS} is set with the data in {UK_TELCO_IT_LEAD_IMPORT_FILE}, query the 3rd & 4th Salesforce Lead records by Email in the default target org. Ensure that the ID captured is the 15-digit format, not the 18-digit version.
+- {OUTPUT_FILE_POSITIVE_TEST_SPECS} is set to "nova-uk-telco-IT-positive-response-test-spec.yaml".
+- {OUTPUT_FILE_POSITIVE_TEST_RESULTS} is set to "Nova-uk-telecommunication-IT-positive-responses-test-results.md".
+
+## 5. Test Opt-out - with 2 Lead Records  
+- Execute the following /uk-test-referencess/opt-out.md
+- INPUT_OPT_OUT_TEST is set to "@testing/input/uk/nova-uk-opt-out-test.yaml".
+- {LEAD_RECORD_IDS} is set with the data in {UK_TELCO_IT_LEAD_IMPORT_FILE}, query the 5th & 6th Salesforce Lead records by Email in the default target org. Ensure that the ID captured is the 15-digit format, not the 18-digit version.
+- {OUTPUT_FILE_OPT_OUT_TEST_SPECS} is set to "nova-uk-telco-IT-opt-out-test-spec.yaml".
+- {OUTPUT_FILE_OPT_OUT_TEST_RESULTS} is set to "Nova-uk-telecommunication-IT-opt-out-responses-test-results.md".

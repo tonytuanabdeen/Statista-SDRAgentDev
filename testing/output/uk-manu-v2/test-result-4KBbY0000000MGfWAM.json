@@ -1,0 +1,120 @@
+{
+  "endTime": "2026-04-30T11:12:46Z",
+  "startTime": "2026-04-30T11:12:33Z",
+  "status": "COMPLETED",
+  "subjectName": "Nova_V2_UK_Manu_Nudges_Nova",
+  "testCases": [
+    {
+      "endTime": "2026-04-30T11:12:43Z",
+      "generatedData": {
+        "actionsSequence": "[&#39;GetRecordDetails&#39;]",
+        "invokedActions": "[[{\"function\":{\"name\":\"GetRecordDetails_179bY000001mc8s\"}}]]",
+        "outcome": "Subject: Re: A clearer view of your target audiences\n\nHi Saarah,\n\nMarketing campaigns often struggle when audience insights are limited, making it harder to achieve precise targeting. Statista provides detailed consumer data to help refine strategies and go beyond basic demographics.\n\nWould a quick 15-minute call be worth exploring how this fits into your current campaigns? Or if this isn’t relevant, no worries at all.",
+        "topic": "sales_sdr_agent_FollowUpOutreach"
+      },
+      "inputs": {
+        "utterance": "Draft a nudge email to a lead. Do not schedule the email."
+      },
+      "startTime": "2026-04-30T11:12:33Z",
+      "status": "COMPLETED",
+      "testNumber": 1,
+      "testResults": [
+        {
+          "actualValue": "sales_sdr_agent_FollowUpOutreach",
+          "endTime": "2026-04-30T11:12:44Z",
+          "errorCode": 0,
+          "expectedValue": "sales_sdr_agent_FollowUpOutreach",
+          "metricLabel": "topic_assertion",
+          "name": "topic_assertion",
+          "result": "PASS",
+          "score": 1,
+          "startTime": "2026-04-30T11:12:34Z",
+          "status": "COMPLETED",
+          "metricExplainability": ""
+        },
+        {
+          "actualValue": "['GetRecordDetails']",
+          "endTime": "2026-04-30T11:12:44Z",
+          "errorCode": 0,
+          "expectedValue": "['GetRecordDetails']",
+          "metricLabel": "actions_assertion",
+          "name": "actions_assertion",
+          "result": "PASS",
+          "score": 1,
+          "startTime": "2026-04-30T11:12:34Z",
+          "status": "COMPLETED",
+          "metricExplainability": ""
+        },
+        {
+          "actualValue": "Subject: Re: A clearer view of your target audiences\n\nHi Saarah,\n\nMarketing campaigns often struggle when audience insights are limited, making it harder to achieve precise targeting. Statista provides detailed consumer data to help refine strategies and go beyond basic demographics.\n\nWould a quick 15-minute call be worth exploring how this fits into your current campaigns? Or if this isn’t relevant, no worries at all.",
+          "endTime": "2026-04-30T11:12:44Z",
+          "errorCode": 0,
+          "expectedValue": "A nudge email is successfully drafted.",
+          "metricExplainability": "The bot's response drafts an email that aligns with the task of creating a nudge email to a lead, including a subject line, body, and a call to action. It does not schedule the email, as instructed. The content is relevant and clear, though it includes a call to action (a call) which might be considered beyond a simple nudge, but overall it meets the core requirement of drafting the email.",
+          "metricLabel": "output_validation",
+          "name": "output_validation",
+          "result": "PASS",
+          "score": 5,
+          "startTime": "2026-04-30T11:12:34Z",
+          "status": "COMPLETED"
+        }
+      ]
+    },
+    {
+      "endTime": "2026-04-30T11:12:45Z",
+      "generatedData": {
+        "actionsSequence": "[&#39;GetRecordDetails&#39;]",
+        "invokedActions": "[[{\"function\":{\"name\":\"GetRecordDetails_179bY000001mc8s\"}}]]",
+        "outcome": "Subject: Re: Trusted data for AI tools\n\nHi Markos,\n\nCurated external data can simplify how your team feeds verified information into BI dashboards and AI tools, ensuring governance and reducing risks like hallucinations.\n\nWould a quick call be worth it to explore how this fits into your analytics workflows?",
+        "topic": "sales_sdr_agent_FollowUpOutreach"
+      },
+      "inputs": {
+        "utterance": "Draft a nudge email to a lead. Do not schedule the email."
+      },
+      "startTime": "2026-04-30T11:12:33Z",
+      "status": "COMPLETED",
+      "testNumber": 2,
+      "testResults": [
+        {
+          "actualValue": "sales_sdr_agent_FollowUpOutreach",
+          "endTime": "2026-04-30T11:12:46Z",
+          "errorCode": 0,
+          "expectedValue": "sales_sdr_agent_FollowUpOutreach",
+          "metricLabel": "topic_assertion",
+          "name": "topic_assertion",
+          "result": "PASS",
+          "score": 1,
+          "startTime": "2026-04-30T11:12:34Z",
+          "status": "COMPLETED",
+          "metricExplainability": ""
+        },
+        {
+          "actualValue": "['GetRecordDetails']",
+          "endTime": "2026-04-30T11:12:46Z",
+          "errorCode": 0,
+          "expectedValue": "['GetRecordDetails']",
+          "metricLabel": "actions_assertion",
+          "name": "actions_assertion",
+          "result": "PASS",
+          "score": 1,
+          "startTime": "2026-04-30T11:12:34Z",
+          "status": "COMPLETED",
+          "metricExplainability": ""
+        },
+        {
+          "actualValue": "Subject: Re: Trusted data for AI tools\n\nHi Markos,\n\nCurated external data can simplify how your team feeds verified information into BI dashboards and AI tools, ensuring governance and reducing risks like hallucinations.\n\nWould a quick call be worth it to explore how this fits into your analytics workflows?",
+          "endTime": "2026-04-30T11:12:46Z",
+          "errorCode": 0,
+          "expectedValue": "A nudge email is successfully drafted.",
+          "metricExplainability": "The bot response drafts an email that aligns with the request to nudge a lead, including a subject line, greeting, body, and a call to action. It does not schedule the email, as instructed. The content is relevant and clear, though the subject line may not directly reflect the body content, but overall it meets the goal of drafting a nudge email.",
+          "metricLabel": "output_validation",
+          "name": "output_validation",
+          "result": "PASS",
+          "score": 5,
+          "startTime": "2026-04-30T11:12:34Z",
+          "status": "COMPLETED"
+        }
+      ]
+    }
+  ]
+}

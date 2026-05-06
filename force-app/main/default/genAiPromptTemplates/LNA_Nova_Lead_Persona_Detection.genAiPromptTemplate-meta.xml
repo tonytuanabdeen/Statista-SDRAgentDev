@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>dMILhQYDUJwq3yTk8nWNv6iQrEWPeihWpuXQTHpD26s=_1</activeVersionIdentifier>
+    <description>Prompt template to identify persona based on Lead fields</description>
+    <developerName>LNA_Nova_Lead_Persona_Detection</developerName>
+    <masterLabel>LNA Nova - Lead Persona Detection</masterLabel>
+    <overridable>false</overridable>
+    <templateVersions>
+        <content>## Task
+You are a persona classifier. Based on the lead&apos;s profile below, determine which ONE of the 7 personas best matches this lead. If none of the personas clearly match, return FALLBACK.
+
+## Lead Profile
+- Title: {!$Input:Lead.Title}
+- Lead Role: {!$Input:Lead.LeadRole__c}
+- Company: {!$Input:Lead.Company}
+- Industry: {!$Input:Lead.Industry}
+
+## Available Personas
+
+{!$Input:PersonaProfiles}
+
+## Instructions
+1. First, determine what the lead&apos;s title means - what is their actual job function and seniority level? If the title is in a non-English language, translate it to its English equivalent before proceeding.
+2. The Title is the primary identifier. If Lead Role is empty, missing, or shows a placeholder, rely on Title alone - do not treat missing fields as a reason to return FALLBACK.
+3. Match the lead&apos;s actual role function against each persona&apos;s Role Definition and Typical Titles. Match on meaning, not word similarity. If the title is a clear match to a persona&apos;s Typical Titles, assign that persona confidently.
+4. Consider the Company and Industry as additional context.
+5. Select the ONE persona that best matches from the list below.
+6. If the lead&apos;s title does not clearly match ANY persona (e.g., &quot;Leader&quot;, &quot;employee&quot;, &quot;CAD Designer&quot;, procurement roles, HR roles), return: FALLBACK
+7. Do NOT guess. A wrong persona is worse than FALLBACK.
+
+## Response Format
+Respond with ONLY one of these exact values as plain text. No JSON, no quotes, no explanation, no markdown.
+
+- LNA-Persona-Strategy-Leader
+- LNA-Persona-Marketing-Leader
+- LNA-Persona-Product-Leader
+- LNA-Persona-Data-BI-Leader
+- LNA-Persona-Consultant
+- LNA-Persona-Founder-Executive
+- LNA-Persona-Executive-Assistant
+- FALLBACK
+
+Example correct response:
+LNA-Persona-Marketing-Leader
+
+Example fallback response:
+FALLBACK
+{!$Input:PersonaProfiles}
+</content>
+        <inputs>
+            <apiName>PersonaProfiles</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>PersonaProfiles</masterLabel>
+            <referenceName>Input:PersonaProfiles</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>Lead</apiName>
+            <definition>SOBJECT://Lead</definition>
+            <masterLabel>Lead</masterLabel>
+            <referenceName>Input:Lead</referenceName>
+            <required>true</required>
+        </inputs>
+        <isCitationEnabled>false</isCitationEnabled>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <versionIdentifier>dMILhQYDUJwq3yTk8nWNv6iQrEWPeihWpuXQTHpD26s=_1</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

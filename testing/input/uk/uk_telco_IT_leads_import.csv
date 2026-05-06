@@ -1,0 +1,7 @@
+FirstName,LastName,Title,Industry,Company,Country,LeadRole__c,ProductOfInterest__c,SubscriptionStatus__c,Website,Email,LeadSource,Status
+Ahriv,Mehta,Chief Marketing Officer,Telecommunication & IT,Zenith Forge Pvt Ltd,United Kingdom,Coach,BASIC_ACCOUNT_PLUS,non-subscriber,https://www.zenithforge.in,aarav.mehta@zenithforge.co.uk,Webform,MQL
+Elienaa,Petrova,Head of Analytics,Telecommunication & IT,TransGlobe Freight,United Kingdom,Coach,BASIC_ACCOUNT_PLUS,non-subscriber,https://www.transglobefreight.co.uk,elena.petrova@transglobefreight.co.uk,Webform,MQL
+Daniel,Yabuki,VP of Strategy,Telecommunication & IT,KraftDrive Systems,United Kingdom,Coach,BASIC_ACCOUNT_PLUS,non-subscriber,https://www.kraftdrive.de,daniel.schmidt@kraftdrive.co.uk,Webform,MQL
+Sophia,Rossi,Senior Consultant,Telecommunication & IT,Verdi Retail Group,United Kingdom,Coach,BASIC_ACCOUNT_PLUS,non-subscriber,https://www.verdiretail.it,sophia.rossi@verdiretail.co.uk,Webform,MQL
+Jaymes,Walcker,CEO,Telecommunication & IT,NorthPeak Energy,United Kingdom,Coach,BASIC_ACCOUNT_PLUS,non-subscriber,https://www.northpeakenergy.com,james.walker@northpeakenergy.com,Webform,MQL
+Fatima,Al-Nuaimi,Executive Assistant,Telecommunication & IT,DesertBuild LLC,United Kingdom,Coach,BASIC_ACCOUNT_PLUS,non-subscriber,https://www.desertbuild.ae,fatima.alnuaimi@desertbuild.com,Webform,MQL

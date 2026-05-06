@@ -1,0 +1,46 @@
+name: "Nova V2 Follow-up Nudge Test 1777547221723"
+subjectType: AGENT
+subjectName: Agentforce_Sales_Development_Rep_2
+
+testCases:
+  - utterance: "Draft a nudge email to a lead. Do not schedule the email."
+    expectedTopic: sales_sdr_agent_FollowUpOutreach
+    expectedActions:
+      - GetRecordDetails
+    expectedOutcome: "A nudge email is successfully drafted."
+    contextVariables:
+      - name: "$Context.OrchestrationStage"
+        value: "Nudge"
+      - name: "$Context.currentObjectApiName"
+        value: "Lead"
+      - name: "$Context.currentRecordId"
+        value: "00QbY00000NPaZJ"
+      - name: "$Context.ContactId"
+        value: "00QbY00000NPaZJ"
+      - name: "$Context.emailBody"
+        value: "Subject: A clearer view of your target audiences Email Body: Hi Saarah,\n\nMarketing leaders often find it hard to quantify audiences, leading to weak targeting in campaigns.\n\nStatista helps teams like yours build data-backed campaign strategies by providing deep consumer insights. This enables a clear understanding of consumers beyond demographics.\n\nWould a 15-minute call be worth it to see if this could be useful? Or if you've already found what you needed, no worries at all.\n\nLet me know if you need anything else!"
+      - name: "$Context.isFinalMessage"
+        value: "FALSE"
+      - name: "$Context.actionCadenceStepTrackerId"
+        value: "8HF000000000000"
+
+  - utterance: "Draft a nudge email to a lead. Do not schedule the email."
+    expectedTopic: sales_sdr_agent_FollowUpOutreach
+    expectedActions:
+      - GetRecordDetails
+    expectedOutcome: "A nudge email is successfully drafted."
+    contextVariables:
+      - name: "$Context.OrchestrationStage"
+        value: "Nudge"
+      - name: "$Context.currentObjectApiName"
+        value: "Lead"
+      - name: "$Context.currentRecordId"
+        value: "00QbY00000NPaav"
+      - name: "$Context.ContactId"
+        value: "00QbY00000NPaav"
+      - name: "$Context.emailBody"
+        value: "Subject: Trusted data for AI tools Email Body: Hi Markos,\n\nI noticed your recent interest in Statista. As Head of Analytics, you likely experience challenges with manually ingesting external data, which can be time-consuming and prone to errors.\n\nStatista provides curated and sourced external data, enabling you to feed verified information directly into your BI dashboards and AI tools. This ensures data governance and quality, reducing hallucination risks for AI initiatives.\n\nWould a 15-minute call be worth it to explore how Statista can automate your external data flows?\n\nLet me know if you have any other questions!"
+      - name: "$Context.isFinalMessage"
+        value: "FALSE"
+      - name: "$Context.actionCadenceStepTrackerId"
+        value: "8HF000000000000"

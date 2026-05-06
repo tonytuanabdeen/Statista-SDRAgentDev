@@ -1,0 +1,46 @@
+name: "Nova Follow-up Nudge Test 1777553645318"
+subjectType: AGENT
+subjectName: Agentforce_Sales_Development_Rep_2
+
+testCases:
+  - utterance: "Draft a nudge email to a lead. Do not schedule the email."
+    expectedTopic: sales_sdr_agent_FollowUpOutreach
+    expectedActions:
+      - GetRecordDetails
+    expectedOutcome: "A nudge email is successfully drafted."
+    contextVariables:
+      - name: "$Context.OrchestrationStage"
+        value: "Nudge"
+      - name: "$Context.currentObjectApiName"
+        value: "Lead"
+      - name: "$Context.currentRecordId"
+        value: "00QbY00000NPkC5"
+      - name: "$Context.ContactId"
+        value: "00QbY00000NPkC5"
+      - name: "$Context.emailBody"
+        value: "Subject: Stronger consumer understanding for campaigns Email Body: Hi Ahriv,\n\nMarketing leaders often face challenges in quantifying target audiences and ensuring consumer evidence supports their campaigns.\n\nStatista provides behaviour and attitude data, helping you build data-backed campaign strategies and prove marketing effectiveness.\n\nWould a 15-minute call be worth it to see if this could be useful? Or if you've already found what you needed, no worries at all.\n\nLet me know if you need further assistance!"
+      - name: "$Context.isFinalMessage"
+        value: FALSE
+      - name: "$Context.actionCadenceStepTrackerId"
+        value: "8HF000000000000"
+
+  - utterance: "Draft a nudge email to a lead. Do not schedule the email."
+    expectedTopic: sales_sdr_agent_FollowUpOutreach
+    expectedActions:
+      - GetRecordDetails
+    expectedOutcome: "A nudge email is successfully drafted."
+    contextVariables:
+      - name: "$Context.OrchestrationStage"
+        value: "Nudge"
+      - name: "$Context.currentObjectApiName"
+        value: "Lead"
+      - name: "$Context.currentRecordId"
+        value: "00QbY00000NPkC6"
+      - name: "$Context.ContactId"
+        value: "00QbY00000NPkC6"
+      - name: "$Context.emailBody"
+        value: "Subject: Trusted data for AI enablement Email Body: Hi Elienaa,\n\nData and BI leaders often face challenges with ingesting external data, which can be time consuming and error prone. Teams like yours also need to ensure data quality for external sources, especially when enabling AI tools.\n\nStatista helps ensure data governance and quality by providing curated, sourced external data directly into your systems, enabling AI initiatives with verified statistics.\n\nHappy to share a few relevant examples. Would you like to take a quick look?\n\nLet me know if you have any other questions!"
+      - name: "$Context.isFinalMessage"
+        value: FALSE
+      - name: "$Context.actionCadenceStepTrackerId"
+        value: "8HF000000000000"

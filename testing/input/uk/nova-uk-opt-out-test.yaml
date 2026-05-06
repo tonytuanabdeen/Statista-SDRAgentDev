@@ -1,0 +1,25 @@
+# Description: Tests Initial Outreach topic for LNA Nova SDR agent with Lead 00QbY00000Mnk29UAB (Tuan Abdeen, CFO @ SFDC, Telecom/IT)
+
+name: "Nova Opt-Out Test {DATETIME}"
+subjectType: AGENT
+subjectName: {AGENT_API_NAME}
+
+testCases:
+  - utterance: "Opt-out."
+    expectedTopic: sales_sdr_agent_ManageOptOut
+    expectedActions:
+      - LNA_Nova_Update_Lead_Record
+    expectedOutcome: "Opt-out."
+    contextVariables:
+      - name: "$Context.OrchestrationStage"
+        value: "Reply"
+      - name: "$Context.currentObjectApiName"
+        value: "Lead"
+      - name: "$Context.currentRecordId"
+        value: {DYNAMIC_LEAD_RECORD_ID}
+      - name: "$Context.emailBody"
+        value: {PREVIOUS_EMAIL_BODY}
+      - name: "$Context.emailBody"
+        value: "I'm not interested"
+      - name: "$Context.actionCadenceStepTrackerId"
+        value: "8HF000000000000"

@@ -1,0 +1,3 @@
+- Set {AGENT_API_NAME} to "Agentforce_Sales_Development_Rep_2".
+- Set {OUTPUT_FOLDER} to "@testing/output/uk-manu-v2".
+- Execute the following /test-lna-uk-manufacturing-Nova-V1

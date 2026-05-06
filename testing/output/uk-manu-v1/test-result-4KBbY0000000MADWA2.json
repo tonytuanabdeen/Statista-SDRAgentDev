@@ -1,0 +1,120 @@
+{
+  "endTime": "2026-04-30T10:29:52Z",
+  "startTime": "2026-04-30T10:29:40Z",
+  "status": "COMPLETED",
+  "subjectName": "Nova_UK_Manu_Nudges_V1_Nova",
+  "testCases": [
+    {
+      "endTime": "2026-04-30T10:29:51Z",
+      "generatedData": {
+        "actionsSequence": "[&#39;GetRecordDetails&#39;]",
+        "invokedActions": "[[{\"function\":{\"name\":\"GetRecordDetails_179e2ba3b99752f\"}}]]",
+        "outcome": "Subject: Re: A clearer view of your target audience\n\nHi Saarah,\n\nMarketing teams often face challenges in understanding audience behaviors deeply enough to refine targeting strategies effectively. Statista provides actionable consumer insights that go beyond surface-level demographics.\n\nWould a quick 15-minute call be helpful to explore this further? Or if this isn’t relevant right now, no worries at all.",
+        "topic": "sales_sdr_agent_FollowUpOutreach"
+      },
+      "inputs": {
+        "utterance": "Draft a nudge email to a lead. Do not schedule the email."
+      },
+      "startTime": "2026-04-30T10:29:40Z",
+      "status": "COMPLETED",
+      "testNumber": 1,
+      "testResults": [
+        {
+          "actualValue": "sales_sdr_agent_FollowUpOutreach",
+          "endTime": "2026-04-30T10:29:52Z",
+          "errorCode": 0,
+          "expectedValue": "sales_sdr_agent_FollowUpOutreach",
+          "metricLabel": "topic_assertion",
+          "name": "topic_assertion",
+          "result": "PASS",
+          "score": 1,
+          "startTime": "2026-04-30T10:29:41Z",
+          "status": "COMPLETED",
+          "metricExplainability": ""
+        },
+        {
+          "actualValue": "['GetRecordDetails']",
+          "endTime": "2026-04-30T10:29:52Z",
+          "errorCode": 0,
+          "expectedValue": "['GetRecordDetails']",
+          "metricLabel": "actions_assertion",
+          "name": "actions_assertion",
+          "result": "PASS",
+          "score": 1,
+          "startTime": "2026-04-30T10:29:41Z",
+          "status": "COMPLETED",
+          "metricExplainability": ""
+        },
+        {
+          "actualValue": "Subject: Re: A clearer view of your target audience\n\nHi Saarah,\n\nMarketing teams often face challenges in understanding audience behaviors deeply enough to refine targeting strategies effectively. Statista provides actionable consumer insights that go beyond surface-level demographics.\n\nWould a quick 15-minute call be helpful to explore this further? Or if this isn’t relevant right now, no worries at all.",
+          "endTime": "2026-04-30T10:29:52Z",
+          "errorCode": 0,
+          "expectedValue": "A nudge email is successfully drafted.",
+          "metricExplainability": "The bot response drafts an email that aligns with the expected outcome of creating a nudge email. It includes a subject, greeting, body content, and a call to action, which is appropriate for a nudge email. The response does not schedule the email, as instructed. The content is relevant and clear, with no irrelevant information.",
+          "metricLabel": "output_validation",
+          "name": "output_validation",
+          "result": "PASS",
+          "score": 5,
+          "startTime": "2026-04-30T10:29:41Z",
+          "status": "COMPLETED"
+        }
+      ]
+    },
+    {
+      "endTime": "2026-04-30T10:29:50Z",
+      "generatedData": {
+        "actionsSequence": "[&#39;GetRecordDetails&#39;]",
+        "invokedActions": "[[{\"function\":{\"name\":\"GetRecordDetails_179e2ba3b99752f\"}}]]",
+        "outcome": "Subject: Re: Integrating trusted external data\n\nHi Markos,\n\nCurated external data can simplify ingestion workflows and reduce errors, ensuring your dashboards and AI tools are fed with verified data.\n\nWould a 15-minute call be worth it to explore how this fits into your data governance initiatives? Or if you&#39;ve already found what you needed, no worries at all.",
+        "topic": "sales_sdr_agent_FollowUpOutreach"
+      },
+      "inputs": {
+        "utterance": "Draft a nudge email to a lead. Do not schedule the email."
+      },
+      "startTime": "2026-04-30T10:29:40Z",
+      "status": "COMPLETED",
+      "testNumber": 2,
+      "testResults": [
+        {
+          "actualValue": "sales_sdr_agent_FollowUpOutreach",
+          "endTime": "2026-04-30T10:29:51Z",
+          "errorCode": 0,
+          "expectedValue": "sales_sdr_agent_FollowUpOutreach",
+          "metricLabel": "topic_assertion",
+          "name": "topic_assertion",
+          "result": "PASS",
+          "score": 1,
+          "startTime": "2026-04-30T10:29:41Z",
+          "status": "COMPLETED",
+          "metricExplainability": ""
+        },
+        {
+          "actualValue": "['GetRecordDetails']",
+          "endTime": "2026-04-30T10:29:51Z",
+          "errorCode": 0,
+          "expectedValue": "['GetRecordDetails']",
+          "metricLabel": "actions_assertion",
+          "name": "actions_assertion",
+          "result": "PASS",
+          "score": 1,
+          "startTime": "2026-04-30T10:29:41Z",
+          "status": "COMPLETED",
+          "metricExplainability": ""
+        },
+        {
+          "actualValue": "Subject: Re: Integrating trusted external data\n\nHi Markos,\n\nCurated external data can simplify ingestion workflows and reduce errors, ensuring your dashboards and AI tools are fed with verified data.\n\nWould a 15-minute call be worth it to explore how this fits into your data governance initiatives? Or if you've already found what you needed, no worries at all.",
+          "endTime": "2026-04-30T10:29:51Z",
+          "errorCode": 0,
+          "expectedValue": "A nudge email is successfully drafted.",
+          "metricExplainability": "The bot's response drafts an email that aligns with the expected outcome of creating a nudge email. It includes a subject, greeting, body, and a call to action, which is appropriate for a nudge email. The content is relevant and does not include unnecessary information. The bot did not attempt to schedule the email, adhering to the query's instruction. The response is clear, complete, and precise, meeting the criteria for a perfect alignment.",
+          "metricLabel": "output_validation",
+          "name": "output_validation",
+          "result": "PASS",
+          "score": 5,
+          "startTime": "2026-04-30T10:29:41Z",
+          "status": "COMPLETED"
+        }
+      ]
+    }
+  ]
+}
