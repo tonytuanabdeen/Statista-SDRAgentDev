@@ -6,7 +6,13 @@
 
 ## Slide 1 — Title
 
-> "Thank you for your time today. I'd like to walk you through a proposed architectural improvement to LNA Nova — our Agentforce Sales Development Rep. The focus is scalability: how we take the working V1 agent and re-engineer it so it can serve multiple markets, multiple languages, and scale predictably — without increasing maintenance burden."
+> "Thank you for your time today Anjali & the team."
+
+> "I'd like to walk you through a proposed architectural improvement to LNA Nova — which I call the LNA2.0." 
+
+> "This is a continuation of the presenttaion we had around Agent scaling playbook. Which we talked about the previous speedboard, fast-follow, then scalling by Profit-center and scale by Lanugage/Country etc."
+
+> "Today, once again the focus is scalability: how we take the working V1 agent and re-engineer it so it can serve multiple markets, multiple languages, and scale predictably — without increasing maintenance burden."
 
 ---
 
@@ -52,15 +58,15 @@
 
 ## Slide 4 — Recommended Target Architecture
 
-> "Here's the target pattern. It's simple and it's the same 4 all four topics.
+> "Here's the target pattern. It's simple and it's the same for all 4 topics.
 
 > **Topic** — stays minimal. Two instructions only: scope and guardrails. The planner decides *what* to do and *when*, but never *how*.
 
-> **Flow** — this is where determinism lives. It gets the Lead record including the Country field, resolves the locale — US country maps to US spelling, everything else defaults to UK — calls the Prompt Template with that locale as a parameter, updates records, and returns the email. Fully deterministic. No guessing.
+> **Flow** — this is where determinism lives. It gets the Lead record including the Country field, resolves the locale — US country maps to US spelling, everything else defaults to UK — calls the Prompt Template with that locale as a parameter, updates records, and returns the email. Fully deterministic. No guess-work.
 
 > **Prompt Template** — this is where generation happens. Full personalisation logic, dynamic spelling-locale input. No hardcoded spelling directives anywhere in the system. The LLM decides *how* to Generate, but within the constraints we pass it.
 
-> The key insight: we're pushing decision-making *out* of the planner and *into* the right layer. Routing decisions stay with the planner. Data operations go to Flows. Language generation goes to templates. Each layer does what it's best at."
+> The key insight: we're pushing & moving away the "decision-making", *out* of the planner and *into* the right layer. Routing decisions stay with the planner. Data operations go to Flows. Language generation goes to templates. Each layer does what it's best at."
 
 ---
 
@@ -70,9 +76,10 @@
 
 > At the top, the Sales Cadence Orchestrator triggers based on stage — Intro, Nudge, or Reply. That hits the appropriate planner, which selects the right topic.
 
-> Every topic follows the identical pattern: two instructions, one Flow action. Each Flow calls its own Prompt Template — and we're using Gemini 2.5 Flash for generation across the board, with GPT-4o Mini retained for persona detection where we need the speed.
+> Every topic follows the identical pattern: two instructions, one Flow action. Each Flow calls its own Prompt Template. 
+~~and we're using Gemini 2.5 Flash for generation across the board, with GPT-4o Mini retained for persona detection where we need the speed.~~
 
-> What's new here is the three Flows and three Prompt Templates on the right — Follow-Up Nudge, Meeting Response, and Opt-Out Response. These are the net-new deliverables.
+> What's new here is the 3 Flows and 3 Prompt Templates on the right — Follow-Up Nudge, Meeting Response, and Opt-Out Response. These are the net-new deliverables.
 
 > The beauty of this design is that every topic is now structurally identical. If you understand one, you understand all four. That's what scalability looks like."
 
@@ -84,7 +91,7 @@
 
 > "Let me quantify the shift.
 
-> Topic instructions go from 21 across the agent — roughly 8,000 words of XML — down to 8. About 800 words total. That's a 90% reduction in planner cognitive load.
+> Topic instructions go from **21 across the agent** — roughly 8,000 words of XML — **down to 8.** About 800 words total. That's a 90% reduction in planner cognitive load.
 
 > Prompt Builder templates go from 2 to 5 — we're adding Follow-Up Nudge, Meeting Response, and Opt-Out.
 
@@ -94,7 +101,10 @@
 
 > And spelling locales go from 1 hardcoded UK to 2 dynamic — UK and US — resolved per Lead data. This same mechanism scales to multi-language later without architectural changes.
 
-> For each topic I've listed the specific scope. Follow-up Outreach: migrate 6 instructions into 1 Prompt Template plus a Flow. Meeting Response: 7 instructions into 1 PT plus Flow. Manage Opt-Out: 6 instructions into 1 PT plus Flow with classification branching."
+> For each topic I've listed the specific scope. 
+- Follow-up Outreach: migrate 6 instructions into 1 Prompt Template plus a Flow. 
+- Meeting Response: 7 instructions into 1 PT plus Flow. 
+- Manage Opt-Out: 6 instructions into 1 PT plus Flow with classification branching."
 
 ---
 
@@ -106,9 +116,9 @@
 
 > **Increased Determinism** — zero picklist value prediction errors. The Flow sets exact values; the planner never touches them.
 
-> **Iteration speed** — prompt templates deploy independently from the agent. Product can iterate on tone and messaging without a full agent redeployment.
+> **Iteration speed** — prompt templates deploy independently from the agent. Agent can iterate on tone and messaging without a full agent redeployment.
 
-> **Maintenance** — every topic follows the same Flow-plus-Template structure.
+> **Maintenance** — every topic follows the same Flow-plus-Prompt-Template structure.
 
 > One trade-off to flag: additional Prompt Template invocations will increase Flex Credit consumption.
 
@@ -123,7 +133,7 @@
 
 > **Control Model Selection** Change primary Model in PT metadata based on needs. This is not possible with Insutruction-based approach.
 
->**Important**: On the right you can see the maturity jump. V1 was deliberately hybrid — we shipped fast and within budget. Nova 2.0 is streamlined: deterministic, locale-aware, and every topic follows the same pattern."
+>**Important**: On the right you can see the maturity jump. V1 was deliberately hybrid — we shipped fast and within budget - with speedboat. Nova 2.0 is streamlined: deterministic, locale-aware, and every topic follows the same pattern."
 
 > <br/><br/>
 > And that's all Folks. this is what we have for today!
