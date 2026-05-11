@@ -1,0 +1,14 @@
+{
+  "required" : [ "InputLeadId" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "InputLeadId" : {
+      "title" : "InputLeadId",
+      "description" : "Variable containing LeadId",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

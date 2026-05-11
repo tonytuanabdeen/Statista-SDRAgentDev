@@ -1,0 +1,17 @@
+{
+  "required" : [ "leadRecord" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "leadRecord" : {
+      "title" : "leadRecord",
+      "description" : "Lead record to be updated",
+      "lightning:type" : "lightning__recordInfoType",
+      "lightning:sObjectInfo" : {
+        "apiName" : "Lead"
+      },
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

@@ -13,9 +13,9 @@
         </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
-            <name>Input:Current_Date</name>
+            <name>Input:Lead</name>
             <value>
-                <elementReference>$Flow.CurrentDate</elementReference>
+                <elementReference>Get_Lead_Record</elementReference>
                 <inputConfiguratorMode>Resource</inputConfiguratorMode>
             </value>
         </inputParameters>
@@ -27,9 +27,9 @@
             </value>
         </inputParameters>
         <inputParameters>
-            <name>Input:Lead</name>
+            <name>Input:Current_Date</name>
             <value>
-                <elementReference>Get_Lead_Record</elementReference>
+                <elementReference>$Flow.CurrentDate</elementReference>
                 <inputConfiguratorMode>Resource</inputConfiguratorMode>
             </value>
         </inputParameters>
@@ -77,22 +77,6 @@
     <apiVersion>66.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
-        <name>Set_Blank_Lead_Description_Value</name>
-        <label>Set Blank Lead Description Value</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <assignmentItems>
-            <assignToReference>varLeadDescrption</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue></stringValue>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Generate_Lead_Description_Summary</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
         <description>Setting the Generated Lead Log Summary</description>
         <name>Set_Generated_Lead_Summary</name>
         <label>Set Generated Lead Summary</label>
@@ -107,23 +91,6 @@
         </assignmentItems>
         <connector>
             <targetReference>Respond_Classify_to_Negative_Replies</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <description>Setting the Lead Description Value</description>
-        <name>Set_Lead_Description_Value</name>
-        <label>Set Lead Description Value</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <assignmentItems>
-            <assignToReference>varLeadDescrption</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Lead_Record.LeadDescription__c</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Generate_Lead_Description_Summary</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -203,31 +170,6 @@
             <label>OPT_OUT</label>
         </rules>
     </decisions>
-    <decisions>
-        <name>Is_Lead_Description_Exist</name>
-        <label>Is Lead Description Exist</label>
-        <locationX>0</locationX>
-        <locationY>0</locationY>
-        <defaultConnector>
-            <targetReference>Set_Blank_Lead_Description_Value</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>No</defaultConnectorLabel>
-        <rules>
-            <name>Yes</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Get_Lead_Record.LeadDescription__c</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Set_Lead_Description_Value</targetReference>
-            </connector>
-            <label>Yes</label>
-        </rules>
-    </decisions>
     <description>Orchestrates opt-out classification, response generation, and deterministic lead unqualification</description>
     <environments>Default</environments>
     <interviewLabel>LNA Nova - Manage Opt-Out {!$Flow.CurrentDateTime}</interviewLabel>
@@ -259,7 +201,7 @@
         <locationY>0</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Is_Lead_Description_Exist</targetReference>
+            <targetReference>Generate_Lead_Description_Summary</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -425,22 +367,6 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>true</isOutput>
-    </variables>
-    <variables>
-        <description>Existing Lead Description Value</description>
-        <name>varLeadDescrption</name>
-        <dataType>String</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-    </variables>
-    <variables>
-        <description>Resolved locale (en-UK or en-US)</description>
-        <name>varLocale</name>
-        <dataType>String</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
     </variables>
     <variables>
         <description>Summary response</description>

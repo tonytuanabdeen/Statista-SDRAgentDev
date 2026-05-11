@@ -6,6 +6,7 @@
 	</types>
 	<types>
 		<members>Lead.Lead_Locale__c</members>
+		<members>Lead.OwnerMeetingLink__c</members>
 		<name>CustomField</name>
 	</types>
 	<types>
@@ -23,11 +24,13 @@
 		<members>LNA_Nova_Outreach_Email</members> 
 		<members>LNA_Nova_Negative_Response_Email</members>
 		<members>LNA_Nova_Generate_Log_Summary</members>
+		<members>LNA_Nova_Meeting_Response_Email</members>
 		<name>GenAiPromptTemplate</name>
 	</types>
 	<types>
 		<members>LNANOVALTJsonParser</members>
 		<members>LNANOVALTUpdatedSummary</members>
+		<members>LNANOVALTMeetingResponse</members>
 		<name>LightningTypeBundle</name>
 	</types>
 	<version>66.0</version>
