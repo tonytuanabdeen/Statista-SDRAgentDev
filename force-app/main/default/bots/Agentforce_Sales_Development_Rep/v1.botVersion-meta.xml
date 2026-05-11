@@ -6,13 +6,13 @@
         <botSteps>
             <botMessages>
                 <message>Hi! I&apos;m your helpful bot.</message>
-                <messageIdentifier>b008dcda-f959-45e7-994e-6dd89c04197c</messageIdentifier>
+                <messageIdentifier>cda2bca8-9b6f-4c4e-bfc4-6f0150b8fb1c</messageIdentifier>
             </botMessages>
-            <stepIdentifier>afccb3c4-797b-46da-b6bf-8e01b565daca</stepIdentifier>
+            <stepIdentifier>dda48aff-a1db-441c-85c4-51d14b95e655</stepIdentifier>
             <type>Message</type>
         </botSteps>
         <botSteps>
-            <stepIdentifier>ecefbbcb-561b-4812-9a24-efad3178a297</stepIdentifier>
+            <stepIdentifier>15e9024d-07e8-4f28-997a-285f0ddc0650</stepIdentifier>
             <type>Wait</type>
         </botSteps>
         <developerName>Welcome</developerName>
@@ -24,13 +24,13 @@
         <botSteps>
             <botMessages>
                 <message>Unfortunately, a system error occurred. Let us start again.</message>
-                <messageIdentifier>e85196d2-ef6d-4cdf-b5e9-d84fa2b89fbe</messageIdentifier>
+                <messageIdentifier>0b310d6c-433a-497c-b5af-c150a281a2c3</messageIdentifier>
             </botMessages>
-            <stepIdentifier>0609b029-38f6-4811-bfca-e2d391a1ef03</stepIdentifier>
+            <stepIdentifier>5f99b6c5-c7d6-45a0-93ac-d07863c0319a</stepIdentifier>
             <type>Message</type>
         </botSteps>
         <botSteps>
-            <stepIdentifier>99d8ae2b-a45b-4c4f-a892-7de0ddcdaa91</stepIdentifier>
+            <stepIdentifier>2d6d9152-66d9-42b9-af76-d7a93452b3c2</stepIdentifier>
             <type>Wait</type>
         </botSteps>
         <developerName>Error_Handling</developerName>
@@ -39,7 +39,7 @@
         <showInFooterMenu>false</showInFooterMenu>
     </botDialogs>
     <citationsEnabled>false</citationsEnabled>
-    <company>Statista is a leading business data and intelligence platform providing verified market data, industry benchmarks, and business insights across 170+ industries and 150+ countries. Trusted by over 4 million users worldwide.</company>
+    <company>Statista is a leading business data and intelligence platform providing verified market data, industry benchmarks, and business insights across 170+ industries and 150+ countries. Trusted by over 4 million users worldwide</company>
     <conversationDefinitionPlanners>
         <genAiPlannerName>Agentforce_Sales_Development_Rep</genAiPlannerName>
     </conversationDefinitionPlanners>

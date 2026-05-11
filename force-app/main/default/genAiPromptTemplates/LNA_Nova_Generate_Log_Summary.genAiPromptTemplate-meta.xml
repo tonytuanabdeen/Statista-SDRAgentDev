@@ -6,16 +6,16 @@
     <masterLabel>LNA Nova - Generate Log Summary</masterLabel>
     <overridable>false</overridable>
     <templateVersions>
-        <content>**Summary Bullet**: Generate exactly 1 bullet summarizing the lead&apos;s reply {!$Input:EmailBody} for internal conversation logging. Tag the bullet with the matching classification tag: [SPAM], [NOT INTERESTED], or [OPT-OUT].
+        <content>**Summary Bullet**: Generate exactly 1 bullet summarizing the lead&apos;s reply {!$Input:EmailBody} for internal conversation logging.
 ## Spelling &amp; Locale
 You must use {!$Input:Lead.Lead_Locale__c} spelling and apply this consistently throughout the entire email.
 
 Format:
 - You must use the TODAY&apos;S DATE {!$Input:Current_Date}. Return today&apos;s date in [YYYY-MM-DD] format.
-- [TODAY&apos;S DATE in YYYY-MM-DD] [classification] &lt;what the lead requested or stated — 1-2 sentences&gt;
+- [TODAY&apos;S DATE in YYYY-MM-DD] &lt;what the lead requested or stated — 1-2 sentences&gt;
 
 Shape reference (placeholders only; do NOT copy content or dates):
-- [YYYY-MM-DD] [classification] Requested to be removed from further outreach
+- [YYYY-MM-DD] Requested to be removed from further outreach
 
 If you cannot ground the bullet in something the lead actually wrote, do NOT create one — return an empty string for summary.
 

@@ -1,0 +1,13 @@
+{
+  "title" : "LNA NOVA LT Meeting Response",
+  "lightning:type" : "lightning__objectType",
+  "properties" : {
+    "reply" : {
+      "title" : "reply",
+      "description" : "reply",
+      "lightning:type" : "lightning__textType"
+    }
+  },
+  "required" : [ "reply" ],
+  "description" : "Meeting Response LT"
+}

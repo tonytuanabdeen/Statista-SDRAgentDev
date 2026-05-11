@@ -457,7 +457,7 @@
             <targetReference>Get_Lead_Record</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <description>Variable containing LeadId</description>
         <name>InputLeadId</name>
