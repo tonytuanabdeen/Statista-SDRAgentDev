@@ -1,0 +1,24 @@
+{
+  "lightning:supportsPersonalization" : true,
+  "description" : "Json Parser Lightning Type",
+  "lightning:type" : "lightning__objectType",
+  "title" : "LNA NOVA LT Json Parser",
+  "required" : [ "classification", "reply", "summary" ],
+  "properties" : {
+    "classification" : {
+      "title" : "classification",
+      "description" : "classification",
+      "lightning:type" : "lightning__textType"
+    },
+    "reply" : {
+      "title" : "reply",
+      "description" : "reply",
+      "lightning:type" : "lightning__textType"
+    },
+    "summary" : {
+      "title" : "summary",
+      "description" : "summary",
+      "lightning:type" : "lightning__textType"
+    }
+  }
+}

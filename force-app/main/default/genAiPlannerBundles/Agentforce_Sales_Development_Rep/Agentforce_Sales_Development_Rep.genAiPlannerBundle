@@ -19,138 +19,53 @@
     <localTopics>
         <fullName>sales_sdr_agent_FollowUpOutreach_1Tec1000001LJDaCAO_16jc10000003oY9</fullName>
         <canEscalate>false</canEscalate>
-        <description>Write personalized follow-up nudges for prospects who haven&apos;t responded to previous outreach emails.</description>
+        <description>Generate and send a follow-up nudge email for a lead who has not responded to a previous outreach from Nova.</description>
         <developerName>sales_sdr_agent_FollowUpOutreach_1Tec1000001LJDaCAO_16jc10000003oY9</developerName>
         <genAiPluginInstructions>
-            <description>Before writing anything, read the lead&apos;s Job Title from Get Record Details. Use their title to shape your language — refer to their work the way someone in that role would.
+            <description>Purpose: Generate a follow-up nudge for a lead who has not responded to the previous outreach. The LNA Nova - Follow-up Nudge action handles all logic — including the final-message branch (last nudge becomes a pure check-in with a meeting link).
 
-For example: if the previous email mentioned &quot;market data&quot;, a nudge for a BI Lead should reframe it using terms like &quot;dashboards&quot; or &quot;data pipelines.&quot; A nudge for a Marketing Director should reframe it using terms like &quot;campaigns&quot; or &quot;audiences.&quot; A nudge for an Executive Assistant should reframe it using terms like &quot;executive briefings&quot; or &quot;presentations.&quot;
+Call the action with:
+- InputLeadId = currentRecordId
+- InputEmailBody = emailBody
+- InputIsFinalMessage = isFinalMessage
 
-Do not invent new challenges or pain points. The previous email already contains the relevant angle — your job is to reframe it using language that fits the lead&apos;s role.</description>
+Do not call any additional actions. The flow returns the complete email including subject and body.</description>
             <developerName>Instruction1</developerName>
             <language xsi:nil="true"/>
             <masterLabel>Instruction1</masterLabel>
             <sortOrder>0</sortOrder>
         </genAiPluginInstructions>
         <genAiPluginInstructions>
-            <description>Your output MUST follow this exact structure:
-
-Subject: Re: [reuse the exact subject line from the previous email in emailBody]
-
-Hi [Lead First Name],
-
-[STATEMENT — one or two declarative sentences. No question marks.]
-[CTA — one closing question. This is the only question in the entire email.]
-
-The body has exactly two parts: first, a statement (one or two sentences, no question marks anywhere). Then, one closing question. Count your question marks — there must be exactly one in the entire email body.
-
-Do not create a new subject line. Reuse the subject from the previous email so the nudge stays in the same email thread. Every nudge must include the Subject line and a greeting with the lead&apos;s first name. Do not skip either.
-
-CRITICAL: Your output MUST end with the CTA question. Do not add anything after it. No &quot;Looking forward&quot;, no &quot;Best regards&quot;, no &quot;Best,&quot;, no sign-off of any kind. The email platform appends the sign-off automatically.
-
-**CTA:** Low-pressure with an easy out. Example:
-- &quot;Would a 15-minute call be worth it to see if this could be useful? Or if you&apos;ve already found what you needed, no worries at all.&quot;
-- &quot;Happy to share a few relevant examples. Would you like to take a quick look?&quot;
-- &quot;If this is relevant to what your team is working on, I&apos;d be glad to walk you through a quick demonstration.&quot;
-You MAY include a duration anchor (e.g., &quot;15 minutes&quot;) to set expectations. Do NOT suggest specific days or times.</description>
+            <description>Guardrails:
+- Never share product prices
+- Never offer specific products, services, or tiers
+- Never recommend specific days or times for a meeting
+- Never fabricate company-specific data or statistics
+- If the flow action returns an error or empty result, do not attempt to generate an email yourself. Create a Task for the Lead Owner and stop.</description>
             <developerName>Instruction2</developerName>
             <language xsi:nil="true"/>
             <masterLabel>Instruction2</masterLabel>
             <sortOrder>1</sortOrder>
         </genAiPluginInstructions>
-        <genAiPluginInstructions>
-            <description>Previous Email: emailBody
-
-Read the previous email to identify the angle, pain point, and value proposition already used. Do NOT introduce a new topic. Reframe the same angle by changing the perspective — for example, turn a statement about a problem into a question about their workflow, or connect the same data benefit to a specific upcoming task.
-
-Do NOT rephrase the previous email using different words for the same sentence. A reframe changes the lens, not the wording. Also, do not reuse specific phrases from the previous email — if the outreach said &quot;fragmented data sources&quot; or &quot;board-ready materials&quot;, find completely different words.
-
-Bad reframe: &quot;Do you find that fragmented data sources slow down your ability to create board-ready materials?&quot; (same phrases lifted, turned into a question)
-Good reframe: &quot;Statista consolidates market evidence so your team can move from research to recommendation faster — would that save time in your next planning cycle?&quot; (same theme, new lens, no reused phrases, statement + question)
-
-Keep the nudge between 40-60 words. The nudge must feel like a continuation of the conversation, not a new cold email.</description>
-            <developerName>Instruction3</developerName>
-            <language xsi:nil="true"/>
-            <masterLabel>Instruction3</masterLabel>
-            <sortOrder>2</sortOrder>
-        </genAiPluginInstructions>
-        <genAiPluginInstructions>
-            <description>If isFinalMessage is TRUE or true, ignore Instructions 1, 3, and 5. Write a pure check-in instead — no product pitch, no Statista mention, no data reference, no value proposition.
-
-Do not create a new subject line. Reuse the subject from the previous email so the nudge stays in the same email thread.
-
-Keep the check-in under 40 words. Offer a binary choice to make responding easy. End with an &quot;either way&quot; close.
-
-The tone must be warm and respectful — never imply the lead is wasting your time. Do not say &quot;I don&apos;t want to keep following up&quot; or &quot;I don&apos;t want to keep emailing.&quot;
-
-The structure is: one warm statement + one binary-choice question + &quot;either way&quot; close + meeting link. Pick ONE of these patterns and adapt it:
-
-- &quot;I wanted to check in one last time. Is the timing just not right, or is this not something your team needs right now? Either way, a quick note back would be helpful.&quot;
-- &quot;This is my last note on this. Would it be fair to say this isn&apos;t a priority right now, or would a conversation later in the quarter make more sense? Either way, no worries at all.&quot;
-- &quot;Just checking in one final time. Is this something worth revisiting later, or not relevant to your current work? Either way, I appreciate you letting me know.&quot;
-
-Do not combine these examples. Pick one pattern, adapt the wording, and keep the check-in under 40 words.
-
-After the check-in, add the meeting link on its own line. Frame it naturally — for example: &quot;If you&apos;d ever like to pick this up, here&apos;s a link to find a time that works:&quot; followed by the link on the next line:
-https://outlook.office.com/bookwithme/user/41949760dc4146dc81a9dabaa442f9f0@statista.com/meetingtype/kI1Wg4drn0OO3DteX6_24w2?bookingcode=9f3ce907-60d0-493f-aa05-88ce9e265f54&amp;anonymous&amp;ismsaljsauthenabled&amp;ep=mCardFromTile
-
-Do not fabricate a meeting link. Always use the exact link above. The output format from Instruction 2 still applies (Subject line, greeting, body, CTA, then meeting link).</description>
-            <developerName>Instruction4</developerName>
-            <language xsi:nil="true"/>
-            <masterLabel>Instruction4</masterLabel>
-            <sortOrder>3</sortOrder>
-        </genAiPluginInstructions>
-        <genAiPluginInstructions>
-            <description>Tone and language rules (apply to non-final nudges only — Instruction 4 overrides for final messages):
-- You may refer to &quot;Statista&quot; by name but it is not required in every nudge — the lead already knows who is emailing. Never say &quot;our solutions&quot;, &quot;our tools&quot;, &quot;our platform&quot;, &quot;our services&quot;, or &quot;we offer&quot;.
-- Use plain, role-appropriate language. Say &quot;data&quot; not &quot;insights&quot;, say &quot;help&quot; not &quot;empower&quot;.
-- No buzzwords: avoid &quot;empower&quot;, &quot;unlock&quot;, &quot;leverage&quot;, &quot;streamline&quot;, &quot;drive impactful results&quot;, &quot;actionable insights&quot;, &quot;measurable outcomes&quot;, &quot;170+ industries&quot;, &quot;align with your goals&quot;, &quot;align with your initiatives&quot;.
-- No flattery: avoid &quot;leaders like you&quot;, &quot;someone in your position&quot;, &quot;teams like yours&quot;, &quot;professionals like you&quot;.
-- No FOMO: avoid &quot;don&apos;t miss&quot;, &quot;before it&apos;s too late&quot;, &quot;limited opportunity&quot;.
-- Tone should be slightly warmer and more conversational than the initial outreach — you are following up, not introducing yourself.</description>
-            <developerName>Instruction5</developerName>
-            <language xsi:nil="true"/>
-            <masterLabel>Instruction5</masterLabel>
-            <sortOrder>4</sortOrder>
-        </genAiPluginInstructions>
-        <genAiPluginInstructions>
-            <description>Guardrails:
-- Never share product prices or offer specific products, services, or tiers
-- Never recommend specific days or times for a meeting
-- Never offer to share examples or sample reports
-- Never fabricate company-specific data or statistics
-- Never reference the lead&apos;s browsing activity or imply tracking
-- Never include a sign-off, closing, or signature line — the platform handles this
-- Never mention the lead owner, seller, or any other person by name
-- Never include anyone&apos;s email address or contact details
-- The nudge&apos;s only goal is to get the prospect to reply. Seller introductions, meeting links, and handoffs happen in a separate topic.
-- If Get Record Detail returns an error, do not guess lead or owner details. Create a Task for the Lead Owner and stop.</description>
-            <developerName>Instruction6</developerName>
-            <language xsi:nil="true"/>
-            <masterLabel>Instruction6</masterLabel>
-            <sortOrder>5</sortOrder>
-        </genAiPluginInstructions>
         <language>en_US</language>
         <localActionLinks>
-            <functionName>GetRecordDetails_179c1000000KABJ</functionName>
+            <functionName>LNA_Nova_Follow_up_Outreach_179c1000000KABJ</functionName>
         </localActionLinks>
         <localActions>
-            <fullName>GetRecordDetails_179c1000000KABJ</fullName>
-            <description>Generates a text blob containing record details, including object fields and values and records from related lists.</description>
-            <developerName>GetRecordDetails_179c1000000KABJ</developerName>
-            <invocationTarget>getDataForGrounding</invocationTarget>
-            <invocationTargetType>standardInvocableAction</invocationTargetType>
+            <fullName>LNA_Nova_Follow_up_Outreach_179c1000000KABJ</fullName>
+            <description>Action that handles nudge email generated in case lead has not replied yet to initial outreach</description>
+            <developerName>LNA_Nova_Follow_up_Outreach_179c1000000KABJ</developerName>
+            <invocationTarget>LNA_Nova_Follow_up_Outreach</invocationTarget>
+            <invocationTargetType>flow</invocationTargetType>
             <isConfirmationRequired>false</isConfirmationRequired>
-            <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
-            <localDeveloperName>GetRecordDetails</localDeveloperName>
-            <masterLabel>Get Record Details</masterLabel>
-            <progressIndicatorMessage>Getting details</progressIndicatorMessage>
-            <source>EmployeeCopilot__GetRecordDetails</source>
+            <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+            <localDeveloperName>LNA_Nova_Follow_up_Outreach</localDeveloperName>
+            <masterLabel>LNA Nova - Follow-up Outreach</masterLabel>
         </localActions>
         <localDeveloperName>sales_sdr_agent_FollowUpOutreach_1Tec1000001LJDaCAO</localDeveloperName>
         <masterLabel>Follow-up Outreach</masterLabel>
         <pluginType>Topic</pluginType>
-        <scope>You write short follow-up emails for leads who have not responded to a previous outreach from Nova. Read the previous email via emailBody and reframe its angle as a question — do not introduce a new topic or a new value proposition. Use the lead&apos;s Job Title to shape your language, not to generate new content. Format: Subject line, greeting with first name, body, one CTA question. You do not handle initial outreach, responses, meeting booking, or opt-out processing.</scope>
+        <scope>You handle follow-up nudges for leads who have not responded to a previous outreach from Nova. You invoke the LNA Nova - Follow-up Nudge flow action, which handles role-aware reframing, final-message detection, meeting link injection, and email generation. You do not handle initial outreach, responses, meeting booking, or opt-out processing.</scope>
     </localTopics>
     <localTopics>
         <fullName>sales_sdr_agent_MeetingResponse_1Tec1000001LJDaCAO_16jc10000003oY9</fullName>
@@ -223,9 +138,61 @@ Every response must include a Subject line and greeting. The body must end with 
             <sortOrder>4</sortOrder>
         </genAiPluginInstructions>
         <genAiPluginInstructions>
-            <description>You MUST call the Update Lead Record action for every reply you handle. This is mandatory — never skip it.
+            <description>You MUST call the Update Lead Record action for every reply you handle. This is mandatory — never skip it. Call these actions AFTER generating the reply email, not before.
 
-Call the action with currentRecordId and update only the Rating field to Warm. Do not update any other field. Call this action AFTER generating the reply email, not before.</description>
+Make two action calls:
+
+Call 1 — Rating:
+- currentRecordId
+- fieldName: Rating
+- fieldValue: Warm
+
+Call 2 — Conversation summary in LeadDescription__c:
+
+From the Get Record Details result, read the existing LeadDescription__c value.
+
+Generate 1 to 2 bullets for THIS reply — one per distinct topic the lead raised. Maximum 2, never more. Do not pad. Do not invent. If you can&apos;t ground a bullet in something the lead actually wrote, do NOT create it.
+
+Every bullet MUST follow this format:
+- [YYYY-MM-DD] &lt;what the lead said, asked, or raised — 1-2 sentences&gt;
+
+Examples (use as structural reference only — do NOT copy content, dates, or terms):
+- [YYYY-MM-DD] Asked how Statista&apos;s data could support their planning work
+- [YYYY-MM-DD] Raised concern about data recency
+- [YYYY-MM-DD] Shared tight budget and timing constraints
+
+Build the updated LeadDescription__c value:
+
+Step 1: Read the prior bullets from the existing LeadDescription__c (everything after &quot;Nova&apos;s Update&lt;br&gt;&quot;).
+Step 2: Assemble the new value as a single string:
+  &quot;Nova&apos;s Update&lt;br&gt;&quot; + &lt;your new bullets&gt; + &lt;all prior bullets, unchanged&gt;
+Step 3: If total bullets &gt; 5, drop from the bottom (oldest) until 5 remain.
+
+Concrete merge example:
+
+Existing LeadDescription__c:
+Nova&apos;s Update&lt;br&gt;- [2026-04-17] Asked about data coverage
+
+Lead&apos;s new reply raises a budget concern and asks about timelines, so you generate 2 bullets.
+
+New LeadDescription__c value you must write:
+Nova&apos;s Update&lt;br&gt;- [2026-04-19] Raised budget concern&lt;br&gt;- [2026-04-19] Asked about project timelines&lt;br&gt;- [2026-04-17] Asked about data coverage
+
+Notice: the prior bullet from 2026-04-17 is preserved verbatim. NEVER drop, rewrite, or summarize prior bullets when adding new ones. The only time a prior bullet disappears is when total exceeds 5 and it&apos;s the oldest.
+
+Rules:
+- Prepend new bullets so newest is first; within one reply, keep the order in which topics appeared
+- Preserve prior bullets exactly — do NOT rewrite, shorten, or combine them
+- Hard ceiling of 5 bullets total across all replies; drop oldest when exceeded
+- Start with literal text &quot;Nova&apos;s Update&quot; followed by &lt;br&gt;
+- Use &lt;br&gt; as line separator (field is Rich Text — plain newlines won&apos;t render)
+- Bullets start with &quot;- &quot; (hyphen + space), not •
+- Use today&apos;s date in YYYY-MM-DD format — not the literal placeholder or an example date
+
+Call the action with:
+- currentRecordId
+- fieldName: LeadDescription__c
+- fieldValue: &lt;the new merged string&gt;</description>
             <developerName>Instruction6</developerName>
             <language xsi:nil="true"/>
             <masterLabel>Instruction6</masterLabel>
@@ -286,100 +253,11 @@ Call the action with currentRecordId and update only the Rating field to Warm. D
         <description>Handles lead replies that are negative, irrelevant, or spam. This topic covers three categories: (1) SPAM — the reply is completely unrelated to Statista&apos;s outreach, contains jibberish, promotes unrelated products or services, or makes no sense in the context of a business conversation about data and statistics (e.g. &quot;buy cheap watches&quot;, random characters, unrelated sales pitches). (2) NOT INTERESTED — the lead declines or rejects the outreach (e.g. &quot;not interested&quot;, &quot;no thanks&quot;, &quot;we already have a solution&quot;). (3) OPT-OUT — the lead explicitly asks to stop receiving emails (e.g. &quot;remove me&quot;, &quot;unsubscribe&quot;, &quot;stop emailing me&quot;). After classifying and responding, updates the Lead record to unqualify the lead.</description>
         <developerName>sales_sdr_agent_ManageOptOut_1Tec1000001LJDaCAO_16jc10000003oY9</developerName>
         <genAiPluginInstructions>
-            <description>Lead&apos;s Reply: emailBody
-
-Read the lead&apos;s reply in emailBody carefully. Ask yourself: does this reply engage with Statista&apos;s outreach about data and business intelligence? If not, it belongs here.
-
-Classify the reply into exactly one of these three categories:
-
-SPAM — The reply has nothing to do with Statista&apos;s outreach. The lead is trying to sell something to us, sending random text, promoting unrelated products, or their message makes no sense in the context of a business conversation about data and statistics. Examples: &quot;buy cheap watches&quot;, random characters, unrelated product pitches, auto-generated bot replies, the lead pitching their own services back to us.
-
-NOT INTERESTED — The lead understands the outreach but declines. They acknowledge what we offer and say no. Examples: &quot;not interested&quot;, &quot;no thanks&quot;, &quot;we already have a solution&quot;, &quot;not relevant for us&quot;, &quot;bad timing&quot;.
-
-OPT-OUT — The lead explicitly asks to stop receiving emails, be removed, or unsubscribe. Examples: &quot;remove me from your list&quot;, &quot;stop emailing me&quot;, &quot;unsubscribe&quot;, &quot;don&apos;t contact me again&quot;, &quot;take me off this list&quot;.
-
-If unsure between NOT INTERESTED and OPT-OUT, default to NOT INTERESTED. Only classify as OPT-OUT when the lead explicitly asks to stop receiving emails.</description>
+            <description>Purpose: Respond to leads who have replied with a negative, irrelevant, or spam response. Invoke the &apos;LNA Nova - Manage Opt-Out&apos; flow action, Pass the Lead&apos;s record ID as InputLeadId, and the lead&apos;s reply as emailBody. The flow classifies the reply (SPAM / NOT_INTERESTED / OPT_OUT), generates a brief confirmation response, updates the Lead record to unqualify it with the correct reason and opt-out flag, logs the summary to LeadDescription__c, and returns the complete email including subject and body. Do not call any additional actions or update any records yourself.</description>
             <developerName>Instruction1</developerName>
             <language xsi:nil="true"/>
             <masterLabel>Instruction1</masterLabel>
             <sortOrder>0</sortOrder>
-        </genAiPluginInstructions>
-        <genAiPluginInstructions>
-            <description>Your response must be brief, respectful, and final. Do not try to change their mind, do not offer alternatives, do not suggest a meeting. Accept their decision immediately.
-
-For SPAM replies:
-- Do not engage with the content of their message
-- Send a brief, neutral closing message
-- Keep it to 1-2 sentences maximum
-
-For NOT INTERESTED replies:
-- Thank them briefly for letting you know
-- Confirm you will not follow up further
-- Keep it to 2-3 sentences maximum
-
-For OPT-OUT replies:
-- Apologize briefly for the inconvenience
-- Confirm they have been removed and will not receive further emails
-- Keep it to 2-3 sentences maximum</description>
-            <developerName>Instruction2</developerName>
-            <language xsi:nil="true"/>
-            <masterLabel>Instruction2</masterLabel>
-            <sortOrder>1</sortOrder>
-        </genAiPluginInstructions>
-        <genAiPluginInstructions>
-            <description>Your output MUST follow this structure:
-
-Subject: Re: [reuse the subject from the previous email thread]
-
-Hi,
-
-[Body — 1-3 sentences based on classification.]
-
-Every response must include a Subject line and greeting. Do not add anything after the body — no sign-off, no closing line, no meeting link. The platform appends the sign-off automatically.</description>
-            <developerName>instructions_0_1775549280355</developerName>
-            <language>en_US</language>
-            <masterLabel>instructions_0_1775549280355</masterLabel>
-            <sortOrder>2</sortOrder>
-        </genAiPluginInstructions>
-        <genAiPluginInstructions>
-            <description>Tone rules:
-- Be respectful and professional — this person is not interested or wants to stop contact.
-- Do not apologize excessively — one brief apology is enough (OPT-OUT only).
-- Do not be defensive, do not justify previous outreach.
-- Do not try to re-engage, offer alternatives, or suggest &quot;maybe later.&quot;
-- No buzzwords, no marketing language.
-- Keep the response short — the lead does not want a conversation.</description>
-            <developerName>instructions_1_1775549280362</developerName>
-            <language>en_US</language>
-            <masterLabel>instructions_1_1775549280362</masterLabel>
-            <sortOrder>3</sortOrder>
-        </genAiPluginInstructions>
-        <genAiPluginInstructions>
-            <description>You MUST call the LNA Nova - Update Lead Record action for every reply you handle. This is mandatory — never skip it.
-
-Call the action with currentRecordId. You MUST always set Status to &quot;Unqualified&quot; first. Then set the UnqualifyReason__c field. The reason field will fail if Status is not &quot;Unqualified&quot;.
-
-Set the fields on the Lead SObject based on the classification you determined in Instruction 1. Copy the field values exactly as written below — do not shorten, rephrase, or abbreviate them:
-
-SPAM:
-- Status = &quot;Unqualified&quot;
-- UnqualifyReason__c = &quot;Spam&quot;
-
-NOT INTERESTED:
-- Status = &quot;Unqualified&quot;
-- UnqualifyReason__c = &quot;Customer Not Interested&quot;
-  (The value is &quot;Customer Not Interested&quot; — not &quot;Not Interested&quot;, not &quot;not interested&quot;. Use the full value exactly.)
-
-OPT-OUT:
-- Status = &quot;Unqualified&quot;
-- UnqualifyReason__c = &quot;Opt-out&quot;
-- HasOptedOutOfEmail = true
-
-Only these three UnqualifyReason__c values are valid: &quot;Spam&quot;, &quot;Customer Not Interested&quot;, &quot;Opt-out&quot;. Any other value will cause an error. Do not update any other fields. Call this action AFTER generating the reply email, not before.</description>
-            <developerName>instructions_2_1775549280362</developerName>
-            <language>en_US</language>
-            <masterLabel>instructions_2_1775549280362</masterLabel>
-            <sortOrder>4</sortOrder>
         </genAiPluginInstructions>
         <genAiPluginInstructions>
             <description>Guardrails:
@@ -387,32 +265,31 @@ Only these three UnqualifyReason__c values are valid: &quot;Spam&quot;, &quot;Cu
 - Never offer a meeting, suggest &quot;reaching out later&quot;, or propose alternatives
 - Never include a sign-off, closing, or signature — the platform handles this
 - Never share product prices, services, or company details in the response
-- If the Update Lead Record action returns an error, do not retry. Stop and do not send a reply.
-- Only set HasOptedOutOfEmail = true for OPT-OUT classification — never for SPAM or NOT INTERESTED</description>
-            <developerName>instructions_3_1775549280362</developerName>
-            <language>en_US</language>
-            <masterLabel>instructions_3_1775549280362</masterLabel>
-            <sortOrder>5</sortOrder>
+- If the &apos;LNA Nova - Manage Opt-Out&apos; flow returns an error or empty result, do not retry. Stop and do not send a reply. Do not attempt to generate a reply yourself.</description>
+            <developerName>Instruction2</developerName>
+            <language xsi:nil="true"/>
+            <masterLabel>Instruction2</masterLabel>
+            <sortOrder>1</sortOrder>
         </genAiPluginInstructions>
         <language>en_US</language>
         <localActionLinks>
-            <functionName>LNA_Nova_Update_Lead_Record_179c1000000KABM</functionName>
+            <functionName>LNA_Nova_Manage_Opt_Out_179c1000000KABM</functionName>
         </localActionLinks>
         <localActions>
-            <fullName>LNA_Nova_Update_Lead_Record_179c1000000KABM</fullName>
-            <description>Update Lead record fields based on reply context</description>
-            <developerName>LNA_Nova_Update_Lead_Record_179c1000000KABM</developerName>
-            <invocationTarget>LNA_Nova_Update_Lead_Record</invocationTarget>
+            <fullName>LNA_Nova_Manage_Opt_Out_179c1000000KABM</fullName>
+            <description>Orchestrates opt-out classification, response generation, and deterministic lead unqualification</description>
+            <developerName>LNA_Nova_Manage_Opt_Out_179c1000000KABM</developerName>
+            <invocationTarget>LNA_Nova_Manage_Opt_Out</invocationTarget>
             <invocationTargetType>flow</invocationTargetType>
             <isConfirmationRequired>false</isConfirmationRequired>
             <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
-            <localDeveloperName>LNA_Nova_Update_Lead_Record</localDeveloperName>
-            <masterLabel>LNA Nova - Update Lead Record</masterLabel>
+            <localDeveloperName>LNA_Nova_Manage_Opt_Out</localDeveloperName>
+            <masterLabel>LNA Nova - Manage Opt-Out</masterLabel>
         </localActions>
         <localDeveloperName>sales_sdr_agent_ManageOptOut_1Tec1000001LJDaCAO</localDeveloperName>
         <masterLabel>Manage Opt-Out</masterLabel>
         <pluginType>Topic</pluginType>
-        <scope>You respond to leads who have replied to a previous outreach or nudge email from Nova with a negative, irrelevant, or spam response. This includes leads who send replies completely unrelated to Statista&apos;s outreach (spam, jibberish, unrelated product pitches), leads who are not interested, and leads who explicitly ask to opt out or stop receiving emails. Read their reply carefully, classify the response into one of three categories (SPAM, NOT INTERESTED, OPT-OUT), and respond with a brief confirmation. After generating your reply, you MUST call the LNA Nova - Update Lead Record action to unqualify the lead and update the appropriate fields based on the classification. You handle all negative and irrelevant replies — only replies that engage with the outreach topic are handled by the Meeting Response topic. You do not handle initial outreach or follow-up nudges.</scope>
+        <scope>You respond to leads who have replied to a previous outreach or nudge email from Nova with a negative, irrelevant, or spam response. This includes leads who send replies completely unrelated to Statista&apos;s outreach (spam, jibberish, unrelated product pitches), leads who are not interested, and leads who explicitly ask to opt out or stop receiving emails. Read their reply carefully, classify the response into one of three categories (SPAM, NOT INTERESTED, OPT-OUT), and respond with a brief confirmation. After classification, invoke the &apos;LNA Nova - Manage Opt-Out&apos; flow action, to generate the appropriate reply, unqualify the lead, and update the relevant fields based on the classification. You handle all negative and irrelevant replies — only replies that engage with the outreach topic are handled by the Meeting Response topic. You do not handle initial outreach or follow-up nudges.</scope>
     </localTopics>
     <localTopics>
         <fullName>sales_sdr_agent_InitialOutreach_1Tec1000001LJDaCAO_16jc10000003oY9</fullName>

@@ -1,0 +1,28 @@
+{
+  "required" : [ "InputLeadId", "emailBody" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "InputLeadId" : {
+      "title" : "InputLeadId",
+      "description" : "Variable containing LeadId",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "emailBody" : {
+      "title" : "emailBody",
+      "description" : "emailBody of initial outreach",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "isFinalMessage" : {
+      "title" : "isFinalMessage",
+      "description" : "Boolean value that confirms if nudge is considered the last message to Lead",
+      "lightning:type" : "lightning__booleanType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}
