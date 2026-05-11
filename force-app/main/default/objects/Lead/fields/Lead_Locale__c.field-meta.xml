@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Locale__c</fullName>
+    <description>Determines the Lead locale based on Country field. Returns en_US for US-based leads, defaults to en_GB for all others including blank values.</description>
+    <externalId>false</externalId>
+    <formula>IF(
+    OR(
+        LOWER(TRIM(Country)) = &quot;united states&quot;,
+        LOWER(TRIM(Country)) = &quot;usa&quot;,
+        LOWER(TRIM(Country)) = &quot;us&quot;
+    ),
+    &quot;en_US&quot;,
+    IF(
+        OR(
+            ISBLANK(Country),
+            LOWER(TRIM(Country)) = &quot;united kingdom&quot;,
+            LOWER(TRIM(Country)) = &quot;uk&quot;,
+            LOWER(TRIM(Country)) = &quot;great britain&quot;
+        ),
+        &quot;en_GB&quot;,
+        &quot;en_GB&quot;
+    )
+)</formula>
+    <inlineHelpText>Locale derived from Lead Country. US variants return en_US; all other countries default to en_GB.</inlineHelpText>
+    <label>Lead Locale</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

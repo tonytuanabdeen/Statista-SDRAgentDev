@@ -1,0 +1,21 @@
+{
+  "required" : [ "InputLeadId", "emailBody" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "InputLeadId" : {
+      "title" : "InputLeadId",
+      "description" : "The Lead record ID",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "emailBody" : {
+      "title" : "emailBody",
+      "description" : "The lead's reply email body",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

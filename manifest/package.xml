@@ -5,8 +5,13 @@
 		<name>Bot</name>
 	</types>
 	<types>
+		<members>Lead.Lead_Locale__c</members>
+		<name>CustomField</name>
+	</types>
+	<types>
 		<members>LNA_Nova_Initial_Outreach</members>
 		<members>LNA_Nova_Update_Lead_Record</members>
+		<members>LNA_Nova_Manage_Opt_Out</members>
 		<name>Flow</name>
 	</types>
 	<types>
@@ -15,8 +20,15 @@
 	</types>
 	<types>
 		<members>LNA_Nova_Lead_Persona_Detection</members>
-		<members>LNA_Nova_Outreach_Email</members>
+		<members>LNA_Nova_Outreach_Email</members> 
+		<members>LNA_Nova_Negative_Response_Email</members>
+		<members>LNA_Nova_Generate_Log_Summary</members>
 		<name>GenAiPromptTemplate</name>
+	</types>
+	<types>
+		<members>LNANOVALTJsonParser</members>
+		<members>LNANOVALTUpdatedSummary</members>
+		<name>LightningTypeBundle</name>
 	</types>
 	<version>66.0</version>
 </Package>
