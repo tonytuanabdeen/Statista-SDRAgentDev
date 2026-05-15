@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Prompt template that generates final nudge for the lead</description>
+        <name>Draft_Final_Nudge_Email</name>
+        <label>Draft Final Nudge Email</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>LNA_Nova_Follow_up_Outreach_Email_isFinal</actionName>
+        <actionType>generatePromptResponse</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>Input:Lead</name>
+            <value>
+                <elementReference>Get_Lead_Record</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Input:emailBody</name>
+            <value>
+                <elementReference>emailBody</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <nameSegment>LNA_Nova_Follow_up_Outreach_Email_isFinal</nameSegment>
+        <offset>0</offset>
+        <outputParameters>
+            <assignToReference>nudgeEmailBody</assignToReference>
+            <name>promptResponse</name>
+        </outputParameters>
+    </actionCalls>
+    <actionCalls>
+        <description>Prompt template that generates next nudge for the lead</description>
+        <name>Draft_Nudge_Email</name>
+        <label>Draft Nudge Email</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>LNA_Nova_Follow_up_Outreach_Email</actionName>
+        <actionType>generatePromptResponse</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>Input:Lead</name>
+            <value>
+                <elementReference>Get_Lead_Record</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Input:emailBody</name>
+            <value>
+                <elementReference>emailBody</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <nameSegment>LNA_Nova_Follow_up_Outreach_Email</nameSegment>
+        <offset>0</offset>
+        <outputParameters>
+            <assignToReference>nudgeEmailBody</assignToReference>
+            <name>promptResponse</name>
+        </outputParameters>
+    </actionCalls>
+    <apiVersion>67.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Check_if_Last_Nudge</name>
+        <label>Check if Last Nudge</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Draft_Nudge_Email</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Is Not last Nudge</defaultConnectorLabel>
+        <rules>
+            <name>Is_Last_Nudge</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>isFinalMessage</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Draft_Final_Nudge_Email</targetReference>
+            </connector>
+            <label>Is Last Nudge</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>LNA Nova - Manage Opt-Ou {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>LNA Nova - Follow-up Outreach</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Fetches the Lead record to generate email nudge</description>
+        <name>Get_Lead_Record</name>
+        <label>Get Lead Record</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_if_Last_Nudge</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>InputLeadId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Lead</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Name</queriedFields>
+        <queriedFields>Country</queriedFields>
+        <queriedFields>Lead_Locale__c</queriedFields>
+        <queriedFields>Title</queriedFields>
+        <queriedFields>OwnerMeetingLink__c</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Lead_Record</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>emailBody of initial outreach</description>
+        <name>emailBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Variable containing LeadId</description>
+        <name>InputLeadId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Boolean value that confirms if nudge is considered the last one</description>
+        <name>isFinalMessage</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Body of generated nudge email</description>
+        <name>nudgeEmailBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

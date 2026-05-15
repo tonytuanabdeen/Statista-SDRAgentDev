@@ -1,0 +1,22 @@
+name: "LNA Nova - Initial Outreach - {{DATETIME}}"
+subjectType: AGENT
+subjectName: {{AGENT_API_NAME}}
+
+testCases:
+  - utterance: "Draft an initial outreach email to a lead. Do not schedule the email. Your response should be a text-formatted email and not JSON."
+    expectedTopic: sales_sdr_agent_InitialOutreach
+    expectedActions:
+      - LNA_Nova_Initial_Outreach
+    expectedOutcome: "Agent generates a personalized first-touch outreach email with a subject line and greeting, without sharing prices or recommending specific meeting times. Language: English with UK spelling and conventions. Tone: professional, peer-to-peer, respectful of senior expertise, concise and value-focused."
+    contextVariables:
+      - name: "$Context.OrchestrationStage"
+        value: "Intro"
+      - name: "$Context.currentObjectApiName"
+        value: "Lead"
+      - name: "$Context.currentRecordId"
+        value: "{{DYNAMIC_LEAD_RECORD_15_ID}}"
+      - name: "$Context.ContactId"
+        value: "{{DYNAMIC_LEAD_RECORD_15_ID}}"
+      - name: "$Context.actionCadenceStepTrackerId"
+        value: "8HF000000000000"
+        

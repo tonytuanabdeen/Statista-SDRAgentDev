@@ -1,0 +1,24 @@
+name: "LNA Nova - Meeting Response - {{DATETIME}}"
+subjectType: AGENT
+subjectName: {{AGENT_API_NAME}}
+
+testCases:
+  - utterance: "Respond to this email. Your response should be a text-formatted email and not JSON."
+    expectedTopic: sales_sdr_agent_MeetingResponse
+    expectedActions:
+      - GetRecordDetails
+    expectedOutcome: "Agent acknowledges, includes the meeting link on its own line."
+    contextVariables:
+      - name: "$Context.OrchestrationStage"
+        value: "Reply"
+      - name: "$Context.currentObjectApiName"
+        value: "Lead"
+      - name: "$Context.currentRecordId"
+        value: "{{DYNAMIC_LEAD_RECORD_15_ID}}"
+      - name: "$Context.ContactId"
+        value: "{{DYNAMIC_LEAD_RECORD_15_ID}}"    
+      - name: "$Context.emailBody"
+        value: "{{PREVIOUS_EMAIL_SUBJECT}}. Body: Hello Nova, thank you for your email. I'm interested to learn more about your products. Could you please tell me more?"
+      - name: "$Context.actionCadenceStepTrackerId"
+        value: "8HF000000000000"
+        

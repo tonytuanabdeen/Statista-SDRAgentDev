@@ -1,0 +1,13 @@
+{
+  "title" : "LNA NOVA LT Updated Summary",
+  "lightning:type" : "lightning__objectType",
+  "properties" : {
+    "UpdatedSummary" : {
+      "description" : "Updated Summary",
+      "lightning:type" : "lightning__textType",
+      "title" : "UpdatedSummary"
+    }
+  },
+  "required" : [ "UpdatedSummary" ],
+  "description" : "Updated Lead Description Summary"
+}

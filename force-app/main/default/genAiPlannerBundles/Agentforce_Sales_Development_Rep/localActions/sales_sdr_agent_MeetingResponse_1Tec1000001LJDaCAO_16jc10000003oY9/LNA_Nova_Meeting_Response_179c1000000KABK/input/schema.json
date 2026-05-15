@@ -1,17 +1,10 @@
 {
-  "required" : [ "InputLeadId", "actionCadenceStepTrackerId", "emailBody" ],
+  "required" : [ "InputLeadId", "emailBody" ],
   "unevaluatedProperties" : false,
   "properties" : {
     "InputLeadId" : {
       "title" : "InputLeadId",
       "description" : "The Lead record ID",
-      "lightning:type" : "lightning__textType",
-      "lightning:isPII" : false,
-      "copilotAction:isUserInput" : false
-    },
-    "actionCadenceStepTrackerId" : {
-      "title" : "actionCadenceStepTrackerId",
-      "description" : "Stores the ID of the action cadence step tracker that is passed into the flow.",
       "lightning:type" : "lightning__textType",
       "lightning:isPII" : false,
       "copilotAction:isUserInput" : false

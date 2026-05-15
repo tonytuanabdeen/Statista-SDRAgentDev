@@ -1,0 +1,43 @@
+name: "LNA Nova - Meeting Response - 2026-05-15T17:26:48"
+subjectType: AGENT
+subjectName: Agentforce_Sales_Development_Rep
+
+testCases:
+  - utterance: "Respond to this email. Your response should be a text-formatted email and not JSON."
+    expectedTopic: sales_sdr_agent_MeetingResponse
+    expectedActions:
+      - GetRecordDetails
+    expectedOutcome: "Agent acknowledges, includes the meeting link on its own line."
+    contextVariables:
+      - name: "$Context.OrchestrationStage"
+        value: "Reply"
+      - name: "$Context.currentObjectApiName"
+        value: "Lead"
+      - name: "$Context.currentRecordId"
+        value: "00QbY00000Nq5sn"
+      - name: "$Context.ContactId"
+        value: "00QbY00000Nq5sn"    
+      - name: "$Context.emailBody"
+        value: "Subject: Market insights for manufacturing strategy. Body: Hello Nova, thank you for your email. I'm interested to learn more about your products. Could you please tell me more?"
+      - name: "$Context.actionCadenceStepTrackerId"
+        value: "8HF000000000000"
+        
+  - utterance: "Respond to this email. Your response should be a text-formatted email and not JSON."
+    expectedTopic: sales_sdr_agent_MeetingResponse
+    expectedActions:
+      - GetRecordDetails
+    expectedOutcome: "Agent acknowledges, includes the meeting link on its own line."
+    contextVariables:
+      - name: "$Context.OrchestrationStage"
+        value: "Reply"
+      - name: "$Context.currentObjectApiName"
+        value: "Lead"
+      - name: "$Context.currentRecordId"
+        value: "00QbY00000Nq5uP"
+      - name: "$Context.ContactId"
+        value: "00QbY00000Nq5uP"    
+      - name: "$Context.emailBody"
+        value: "Subject: Market context for product strategy. Body: Hello Nova, thank you for your email. I'm interested to learn more about your products. Could you please tell me more?"
+      - name: "$Context.actionCadenceStepTrackerId"
+        value: "8HF000000000000"
+        

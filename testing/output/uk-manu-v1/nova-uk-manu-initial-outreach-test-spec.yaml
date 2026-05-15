@@ -1,6 +1,6 @@
-name: "Nova Initial Outreach Test 1777544573155"
+name: "Nova V1 Initial Outreach Test 1778587853941"
 subjectType: AGENT
-subjectName: Agentforce_Sales_Development_Rep_1
+subjectName: Agentforce_Sales_Development_Rep
 
 testCases:
   - utterance: "Generate an initial outreach email for this lead"
@@ -14,7 +14,7 @@ testCases:
       - name: "$Context.currentObjectApiName"
         value: "Lead"
       - name: "$Context.currentRecordId"
-        value: "00QbY00000NPWc9"
+        value: "00QR100000BUHra"
       - name: "$Context.actionCadenceStepTrackerId"
         value: "8HF000000000000"
 
@@ -29,7 +29,7 @@ testCases:
       - name: "$Context.currentObjectApiName"
         value: "Lead"
       - name: "$Context.currentRecordId"
-        value: "00QbY00000NPWfN"
+        value: "00QR100000BULGn"
       - name: "$Context.actionCadenceStepTrackerId"
         value: "8HF000000000000"
 
@@ -44,7 +44,7 @@ testCases:
       - name: "$Context.currentObjectApiName"
         value: "Lead"
       - name: "$Context.currentRecordId"
-        value: "00QbY00000NPUyY"
+        value: "00QR100000BULIP"
       - name: "$Context.actionCadenceStepTrackerId"
         value: "8HF000000000000"
 
@@ -59,7 +59,7 @@ testCases:
       - name: "$Context.currentObjectApiName"
         value: "Lead"
       - name: "$Context.currentRecordId"
-        value: "00QbY00000NPWgz"
+        value: "00QR100000BUJZy"
       - name: "$Context.actionCadenceStepTrackerId"
         value: "8HF000000000000"
 
@@ -74,7 +74,7 @@ testCases:
       - name: "$Context.currentObjectApiName"
         value: "Lead"
       - name: "$Context.currentRecordId"
-        value: "00QbY00000NPWkD"
+        value: "00QR100000BUJ8Z"
       - name: "$Context.actionCadenceStepTrackerId"
         value: "8HF000000000000"
 
@@ -89,7 +89,7 @@ testCases:
       - name: "$Context.currentObjectApiName"
         value: "Lead"
       - name: "$Context.currentRecordId"
-        value: "00QbY00000NPWlp"
+        value: "00QR100000BULLd"
       - name: "$Context.actionCadenceStepTrackerId"
         value: "8HF000000000000"
 
@@ -104,7 +104,7 @@ testCases:
       - name: "$Context.currentObjectApiName"
         value: "Lead"
       - name: "$Context.currentRecordId"
-        value: "00QbY00000NPIm6"
+        value: "00QR100000BULOr"
       - name: "$Context.actionCadenceStepTrackerId"
         value: "8HF000000000000"
 
@@ -119,6 +119,6 @@ testCases:
       - name: "$Context.currentObjectApiName"
         value: "Lead"
       - name: "$Context.currentRecordId"
-        value: "00QbY00000NPWp3"
+        value: "00QR100000BUKcU"
       - name: "$Context.actionCadenceStepTrackerId"
         value: "8HF000000000000"

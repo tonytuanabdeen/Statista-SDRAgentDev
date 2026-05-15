@@ -38,6 +38,46 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <actionCalls>
+        <description>Calls an action that dissociates the target, who has opted out, from the cadence.</description>
+        <name>Remove_Target_From_Cadence</name>
+        <label>Remove Target From Cadence</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>cancelSdrOutreach</actionName>
+        <actionType>cancelSdrOutreach</actionType>
+        <connector>
+            <targetReference>Set_Flow_Status_as_Successful</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Set_Action_Status_as_Failed</targetReference>
+        </faultConnector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>actionCadenceTrackerId</name>
+            <value>
+                <elementReference>CadenceTrackerId</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>completionReasonCode</name>
+            <value>
+                <elementReference>CompletionReason</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>completionDisposition</name>
+            <value>
+                <elementReference>CompletionDisposition</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <nameSegment>cancelSdrOutreach</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
         <description>Calls the Opt-Out Email prompt template to classify the reply and generate a response</description>
         <name>Respond_Classify_to_Negative_Replies</name>
         <label>Respond &amp; Classify to Negative Replies</label>
@@ -76,6 +116,62 @@
     </actionCalls>
     <apiVersion>66.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>Sets isSuccess to false to indicate the failure to dissociate the target from a cadence through the Remove Target from Cadence action.</description>
+        <name>Set_Action_Status_as_Failed</name>
+        <label>Set Action Status as Failed</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>isSuccess</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varErrorMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Sets isSuccess to false to indicate the failure in retrieving the ID of the cadence tracker record.</description>
+        <name>Set_Failure_Status</name>
+        <label>Set Failure Status</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>isSuccess</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varErrorMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Sets isSuccess to true to indicate the flow has completed successfully.</description>
+        <name>Set_Flow_Status_as_Successful</name>
+        <label>Set Flow Status as Successful</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>isSuccess</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+    </assignments>
     <assignments>
         <description>Setting the Generated Lead Log Summary</description>
         <name>Set_Generated_Lead_Summary</name>
@@ -117,6 +213,43 @@
             <targetReference>Apply_Classification</targetReference>
         </connector>
     </assignments>
+    <assignments>
+        <description>Sets isSuccess to false to indicate failure in updating the Lead record, causing failure of the flow.</description>
+        <name>Set_Update_Lead_Failure_Status</name>
+        <label>Set Update Lead Failure Status</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>isSuccess</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varErrorMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.FaultMessage</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <constants>
+        <description>Stores the outcome after completing the RemoveTargetFromCadence action.</description>
+        <name>CompletionDisposition</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Opt Out</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <description>Stores the reason for completing the Remove Target From Cadence action.</description>
+        <name>CompletionReason</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>ManuallyRemoved</stringValue>
+        </value>
+    </constants>
     <decisions>
         <description>Route to the correct record update based on the classification from the PT</description>
         <name>Apply_Classification</name>
@@ -169,6 +302,21 @@
             </connector>
             <label>OPT_OUT</label>
         </rules>
+        <rules>
+            <name>LEGAL_THREAT</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>varClassification</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>LEGAL_THREAT</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Unqualify_Legal_Threat</targetReference>
+            </connector>
+            <label>LEGAL_THREAT</label>
+        </rules>
     </decisions>
     <description>Orchestrates opt-out classification, response generation, and deterministic lead unqualification</description>
     <environments>Default</environments>
@@ -193,6 +341,33 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Gets the cadence step tracker record with the ID matching the actionCadenceStepTrackerId passed into the flow. The Cadence Tracker ID from that record is stored in the CadenceTrackerId variable.</description>
+        <name>Get_Cadence_Tracker_ID</name>
+        <label>Get Cadence Tracker ID</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Remove_Target_From_Cadence</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Set_Failure_Status</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>actionCadenceStepTrackerId</elementReference>
+            </value>
+        </filters>
+        <object>ActionCadenceStepTracker</object>
+        <outputAssignments>
+            <assignToReference>CadenceTrackerId</assignToReference>
+            <field>ActionCadenceTrackerId</field>
+        </outputAssignments>
+    </recordLookups>
     <recordLookups>
         <description>Fetches the Lead record to read Country for locale resolution</description>
         <name>Get_Lead_Record</name>
@@ -221,11 +396,62 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
+        <description>Unqualify Lead as Legal-Threat and set email opt-out flag</description>
+        <name>Unqualify_Legal_Threat</name>
+        <label>Unqualify Legal Threat</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Cadence_Tracker_ID</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Set_Update_Lead_Failure_Status</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>InputLeadId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>HasOptedOutOfEmail</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>LeadDescription__c</field>
+            <value>
+                <elementReference>varSummary</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Unqualified</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>UnqualifyReason__c</field>
+            <value>
+                <stringValue>Legal</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Lead</object>
+    </recordUpdates>
+    <recordUpdates>
         <description>Unqualify Lead as Not Interested</description>
         <name>Unqualify_Not_Interested</name>
         <label>Unqualify Not Interested</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Set_Update_Lead_Failure_Status</targetReference>
+        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -260,6 +486,13 @@
         <label>Unqualify Opt Out</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Cadence_Tracker_ID</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Set_Update_Lead_Failure_Status</targetReference>
+        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -300,6 +533,9 @@
         <label>Unqualify Spam</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
+        <faultConnector>
+            <targetReference>Set_Update_Lead_Failure_Status</targetReference>
+        </faultConnector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -337,6 +573,22 @@
     </start>
     <status>Active</status>
     <variables>
+        <description>Stores the ID of the action cadence step tracker that is passed into the flow.</description>
+        <name>actionCadenceStepTrackerId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Stores the ActionCadenceTrackerId of cadence step tracker record for use in the flow.</description>
+        <name>CadenceTrackerId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <description>The lead&apos;s reply email body</description>
         <name>emailBody</name>
         <dataType>String</dataType>
@@ -353,6 +605,14 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <description>Stores a boolean value that indicates if the flow succeeded or not.</description>
+        <name>isSuccess</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
         <description>Classification result: SPAM, NOT_INTERESTED, or OPT_OUT</description>
         <name>varClassification</name>
         <dataType>String</dataType>
@@ -363,6 +623,14 @@
     <variables>
         <description>Generated opt-out response email returned to the agent</description>
         <name>varEmailOutput</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>Capture the Flow Exception Message</description>
+        <name>varErrorMessage</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>

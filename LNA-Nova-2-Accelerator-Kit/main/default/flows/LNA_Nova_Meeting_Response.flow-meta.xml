@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <description>Generating the Lead Description Log Summary</description>
+        <name>Generate_Lead_Description_Summary</name>
+        <label>Generate Lead Description Summary</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>LNA_Nova_Generate_Log_Summary</actionName>
+        <actionType>generatePromptResponse</actionType>
+        <connector>
+            <targetReference>Set_Generated_Lead_Summary</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>Input:Current_Date</name>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Input:EmailBody</name>
+            <value>
+                <elementReference>emailBody</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Input:Lead</name>
+            <value>
+                <elementReference>Get_Lead_Record</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <nameSegment>LNA_Nova_Generate_Log_Summary</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <actionCalls>
+        <description>Calls the Meeting Response Prompt Template to generate a contextual reply email</description>
+        <name>Generate_Meeting_Response</name>
+        <label>Generate Meeting Response</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>LNA_Nova_Meeting_Response_Email</actionName>
+        <actionType>generatePromptResponse</actionType>
+        <connector>
+            <targetReference>Set_Output_Assignment</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>Input:Lead</name>
+            <value>
+                <elementReference>Get_Lead_Record</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Input:Current_Date</name>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>Input:EmailBody</name>
+            <value>
+                <elementReference>emailBody</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <nameSegment>LNA_Nova_Meeting_Response_Email</nameSegment>
+        <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>66.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>Setting the Generated Lead Log Summary</description>
+        <name>Set_Generated_Lead_Summary</name>
+        <label>Set Generated Lead Summary</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>varSummary</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Generate_Lead_Description_Summary.structuredResponse.UpdatedSummary</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Generate_Meeting_Response</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Setting the Output Assignments</description>
+        <name>Set_Output_Assignment</name>
+        <label>Set Output Assignment</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>varEmailOutput</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Generate_Meeting_Response.structuredResponse.reply</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Lead_Record</targetReference>
+        </connector>
+    </assignments>
+    <description>Orchestrates meeting response email generation with dynamic seller/meeting-link resolution, locale-aware generation, deterministic Lead rating update, and conversation logging.</description>
+    <environments>Default</environments>
+    <interviewLabel>LNA Nova - Meeting Response {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>LNA Nova - Meeting Response</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Fetches the Lead record including Owner name and meeting link for email generation</description>
+        <name>Get_Lead_Record</name>
+        <label>Get Lead Record</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Generate_Lead_Description_Summary</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>InputLeadId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Lead</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>FirstName</queriedFields>
+        <queriedFields>Country</queriedFields>
+        <queriedFields>LeadDescription__c</queriedFields>
+        <queriedFields>Lead_Locale__c</queriedFields>
+        <queriedFields>OwnerMeetingLink__c</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>Update Lead Record</description>
+        <name>Update_Lead_Record</name>
+        <label>Update Lead Record</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>InputLeadId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>LeadDescription__c</field>
+            <value>
+                <elementReference>varSummary</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Rating</field>
+            <value>
+                <stringValue>Warm</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Lead</object>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Lead_Record</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>The lead&apos;s reply email body</description>
+        <name>emailBody</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>The Lead record ID</description>
+        <name>InputLeadId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <description>Generated meeting response email returned to the agent</description>
+        <name>varEmailOutput</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>Summary response</description>
+        <name>varSummary</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

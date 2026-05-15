@@ -1,27 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Package xmlns="http://soap.sforce.com/2006/04/metadata">
-	<types>
-		<members>Agentforce_Sales_Development_Rep</members>
-		<name>Bot</name>
-	</types>
-	<types>
-		<members>Lead.Lead_Locale__c</members>
-		<members>Lead.OwnerMeetingLink__c</members>
-		<name>CustomField</name>
-	</types>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">	
 	<types>
 		<members>LNA_Nova_Initial_Outreach</members>
+		<members>LNA_Nova_Follow_up_Outreach</members>
 		<members>LNA_Nova_Update_Lead_Record</members>
-		<members>LNA_Nova_Manage_Opt_Out</members>
+		<members>LNA_Nova_Meeting_Response</members>
 		<name>Flow</name>
-	</types>
-	<types>
-		<members>Agentforce_Sales_Development_Rep</members>
-		<name>GenAiPlannerBundle</name>
-	</types>
+	</types>	
 	<types>
 		<members>LNA_Nova_Lead_Persona_Detection</members>
-		<members>LNA_Nova_Outreach_Email</members> 
+		<members>LNA_Nova_Initial_Outreach_Email</members> 
+		<members>LNA_Nova_Follow_up_Outreach_Email</members> 
+		<members>LNA_Nova_Follow_up_Outreach_Email_isFinal</members> 
 		<members>LNA_Nova_Negative_Response_Email</members>
 		<members>LNA_Nova_Generate_Log_Summary</members>
 		<members>LNA_Nova_Meeting_Response_Email</members>
