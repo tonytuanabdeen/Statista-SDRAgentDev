@@ -1,0 +1,47 @@
+name: "LNA Nova - Follow-up Nudge - 2026-05-15T17:26:48"
+subjectType: AGENT
+subjectName: Agentforce_Sales_Development_Rep
+
+testCases:
+  - utterance: "Draft a nudge email to a lead. Do not schedule the email. Your response should be a text-formatted email and not JSON."
+    expectedTopic: sales_sdr_agent_FollowUpOutreach
+    expectedActions:
+      - GetRecordDetails
+    expectedOutcome: "A nudge email is successfully drafted."
+    contextVariables:
+      - name: "$Context.OrchestrationStage"
+        value: "Nudge"
+      - name: "$Context.currentObjectApiName"
+        value: "Lead"
+      - name: "$Context.currentRecordId"
+        value: "00QbY00000Nq5pZ"
+      - name: "$Context.ContactId"
+        value: "00QbY00000Nq5pZ"  
+      - name: "$Context.isFinalMessage"
+        value: false 
+      - name: "$Context.emailBody"
+        value: "Subject: Consumer insights for Journeyhorizon Body: **Body:**   Hi Saarah,  As Chief Marketing Officer, you likely know the challenge of quantifying target audiences for effective campaign planning.  Statista provides the behavior and attitude data needed to build data-backed campaign strategies and justify marketing spend with clear ROI.  Happy to share a few relevant examples. Worth a quick look?"
+      - name: "$Context.actionCadenceStepTrackerId"
+        value: "8HF000000000000"  
+        
+  - utterance: "Draft a nudge email to a lead. Do not schedule the email. Your response should be a text-formatted email and not JSON."
+    expectedTopic: sales_sdr_agent_FollowUpOutreach
+    expectedActions:
+      - GetRecordDetails
+    expectedOutcome: "A nudge email is successfully drafted."
+    contextVariables:
+      - name: "$Context.OrchestrationStage"
+        value: "Nudge"
+      - name: "$Context.currentObjectApiName"
+        value: "Lead"
+      - name: "$Context.currentRecordId"
+        value: "00QbY00000Nq5rB"
+      - name: "$Context.ContactId"
+        value: "00QbY00000Nq5rB"  
+      - name: "$Context.isFinalMessage"
+        value: false 
+      - name: "$Context.emailBody"
+        value: "Subject: External data for AI initiatives Body: Hi Markos,  As the Head of Data Engineering at New North, you likely encounter challenges with ensuring credible external data for AI initiatives.  Statista provides curated and sourced external data, enabling you to feed verified statistics directly into your dashboards and AI tools. This reduces manual ingestion and ensures data governance.  If this is relevant to what your team is working on, I&#39;d be glad to show you what&#39;s possible."
+      - name: "$Context.actionCadenceStepTrackerId"
+        value: "8HF000000000000"  
+        

@@ -1,12 +1,19 @@
 {
-  "packageDirectories": [
+  "packageDirectories": [    
     {
-      "path": "force-app",
-      "default": true
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT",
+      "path": "LNA-Nova-2-Accelerator-Kit",
+      "default": true,
+      "package": "LNA-Nova-2-Accelerator-Kit",
+      "versionDescription": ""
     }
   ],
   "name": "Statista-SDRAgentDev",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "66.0"
+  "sourceApiVersion": "66.0",
+  "packageAliases": {
+    "LNA-Nova-2-Accelerator-Kit": "0HoJ6000000fxWDKAY"
+  }
 }

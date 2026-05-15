@@ -1,0 +1,43 @@
+name: "LNA Nova - Opt-Out - 2026-05-15T17:26:48"
+subjectType: AGENT
+subjectName: Agentforce_Sales_Development_Rep
+
+testCases:
+  - utterance: "Respond to this email. Do not schedule the email. Your response should be a text-formatted email and not JSON."
+    expectedTopic: sales_sdr_agent_ManageOptOut
+    expectedActions:
+      - LNA_Nova_Update_Lead_Record
+    expectedOutcome: Agent classifies the reply as NOT INTERESTED, thanks the lead briefly, confirms no further follow-up in 2-3 sentences, does not try to re-engage or offer alternatives, sets Lead Status to Unqualified with UnqualifyReason__c equal to Customer Not Interested, does not set HasOptedOutOfEmail, logs a LeadDescription__c bullet with today's date, and does not include a sign-off"
+    contextVariables:
+      - name: "$Context.OrchestrationStage"
+        value: "Reply"
+      - name: "$Context.currentObjectApiName"
+        value: "Lead"
+      - name: "$Context.currentRecordId"
+        value: "00QbY00000Nq5w1"
+      - name: "$Context.ContactId"
+        value: "00QbY00000Nq5w1"
+      - name: "$Context.emailBody"
+        value: "Subject: Research support for Ironpaper. Body: I'm not interested. Thanks but we already have what we need for now. Not the right time for us."
+      - name: "$Context.actionCadenceStepTrackerId"
+        value: "8HF000000000000"
+        
+  - utterance: "Respond to this email. Do not schedule the email. Your response should be a text-formatted email and not JSON."
+    expectedTopic: sales_sdr_agent_ManageOptOut
+    expectedActions:
+      - LNA_Nova_Update_Lead_Record
+    expectedOutcome: Agent classifies the reply as NOT INTERESTED, thanks the lead briefly, confirms no further follow-up in 2-3 sentences, does not try to re-engage or offer alternatives, sets Lead Status to Unqualified with UnqualifyReason__c equal to Customer Not Interested, does not set HasOptedOutOfEmail, logs a LeadDescription__c bullet with today's date, and does not include a sign-off"
+    contextVariables:
+      - name: "$Context.OrchestrationStage"
+        value: "Reply"
+      - name: "$Context.currentObjectApiName"
+        value: "Lead"
+      - name: "$Context.currentRecordId"
+        value: "00QbY00000Nq478"
+      - name: "$Context.ContactId"
+        value: "00QbY00000Nq478"
+      - name: "$Context.emailBody"
+        value: "Subject: Research for Bay Leaf Digital. Body: I'm not interested. Thanks but we already have what we need for now. Not the right time for us."
+      - name: "$Context.actionCadenceStepTrackerId"
+        value: "8HF000000000000"
+        
