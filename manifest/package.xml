@@ -5,6 +5,7 @@
 		<members>LNA_Nova_Follow_up_Outreach</members>
 		<members>LNA_Nova_Update_Lead_Record</members>
 		<members>LNA_Nova_Meeting_Response</members>
+		<members>LNA_Nova_Manage_Opt_Out</members>
 		<name>Flow</name>
 	</types>	
 	<types>
