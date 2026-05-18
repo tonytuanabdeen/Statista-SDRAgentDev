@@ -318,6 +318,31 @@
             <label>LEGAL_THREAT</label>
         </rules>
     </decisions>
+    <decisions>
+        <name>Check_Tracker_Id</name>
+        <label>Check Tracker Id</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Get_Cadence_Tracker_ID</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>IsTestTrackerIdFound</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>actionCadenceStepTrackerId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>8HF000000000000</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Set_Flow_Status_as_Successful</targetReference>
+            </connector>
+            <label>IsTestTrackerIdFound</label>
+        </rules>
+    </decisions>
     <description>Orchestrates opt-out classification, response generation, and deterministic lead unqualification</description>
     <environments>Default</environments>
     <interviewLabel>LNA Nova - Manage Opt-Out {!$Flow.CurrentDateTime}</interviewLabel>
@@ -402,7 +427,7 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Get_Cadence_Tracker_ID</targetReference>
+            <targetReference>Check_Tracker_Id</targetReference>
         </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
@@ -487,7 +512,7 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Get_Cadence_Tracker_ID</targetReference>
+            <targetReference>Check_Tracker_Id</targetReference>
         </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
