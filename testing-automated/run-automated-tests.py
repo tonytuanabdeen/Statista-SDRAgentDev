@@ -60,7 +60,7 @@ SUITE_MEETING  = "LNA_Nova_Meeting_Response"
 SUITE_OPT_OUT  = "LNA_Nova_Opt_Out"
 
 # Target agent for `subjectName` in the generated test spec.
-AGENT_API_NAME = "Agentforce_Sales_Development_Rep"
+AGENT_API_NAME = "Agentforce_Sales_Development_Rep_2"
 
 # Fields that are local metadata only — not real Lead fields in Salesforce.
 NON_SF_FIELDS = {"id", "persona_expected", "salesforce_id","initial_outreach_subject","initial_outreach_body"}
@@ -542,8 +542,7 @@ def main() -> None:
             # ------------------------------------------------------------------            
             print("\n=== Step 3.2: Extract drafted emails ===")
             summaries: list[dict] = []
-            summaries.append(extract_email_bodies(results, filteredLeads, spec_path, suite_base))
-            print(f"\n summaries = {summaries}")
+            summaries.append(extract_email_bodies(results, filteredLeads, spec_path, suite_base))            
             
             write_markdown_report(summaries, _report_filename, title, args.org)
                              

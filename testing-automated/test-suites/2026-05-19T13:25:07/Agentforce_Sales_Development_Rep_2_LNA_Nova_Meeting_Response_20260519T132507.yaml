@@ -1,0 +1,43 @@
+name: "LNA Nova - Meeting Response - 2026-05-19T13:25:07"
+subjectType: AGENT
+subjectName: Agentforce_Sales_Development_Rep_2
+
+testCases:
+  - utterance: "Respond to this email. Your response should be a text-formatted email and not JSON."
+    expectedTopic: sales_sdr_agent_MeetingResponse
+    expectedActions:
+      - LNA_Nova_Meeting_Response
+    expectedOutcome: "Agent acknowledges, includes the meeting link on its own line."
+    contextVariables:
+      - name: "$Context.OrchestrationStage"
+        value: "Reply"
+      - name: "$Context.currentObjectApiName"
+        value: "Lead"
+      - name: "$Context.currentRecordId"
+        value: "00QbY00000Nuwld"
+      - name: "$Context.ContactId"
+        value: "00QbY00000Nuwld"    
+      - name: "$Context.emailBody"
+        value: "Subject: Strategy built on evidence rather than assumptions. Body: Hello Nova, thank you for your email. I'm interested to learn more about your products. Could you please tell me more?"
+      - name: "$Context.actionCadenceStepTrackerId"
+        value: "8HF000000000000"
+        
+  - utterance: "Respond to this email. Your response should be a text-formatted email and not JSON."
+    expectedTopic: sales_sdr_agent_MeetingResponse
+    expectedActions:
+      - LNA_Nova_Meeting_Response
+    expectedOutcome: "Agent acknowledges, includes the meeting link on its own line."
+    contextVariables:
+      - name: "$Context.OrchestrationStage"
+        value: "Reply"
+      - name: "$Context.currentObjectApiName"
+        value: "Lead"
+      - name: "$Context.currentRecordId"
+        value: "00QbY00000NuwnF"
+      - name: "$Context.ContactId"
+        value: "00QbY00000NuwnF"    
+      - name: "$Context.emailBody"
+        value: "Subject: A clearer view of where your market is heading. Body: Hello Nova, thank you for your email. I'm interested to learn more about your products. Could you please tell me more?"
+      - name: "$Context.actionCadenceStepTrackerId"
+        value: "8HF000000000000"
+        

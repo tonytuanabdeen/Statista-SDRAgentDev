@@ -7,6 +7,7 @@ testCases:
     expectedTopic: sales_sdr_agent_FollowUpOutreach
     expectedActions:
       - GetRecordDetails
+      - LNA_Nova_Follow_up_Outreach
     expectedOutcome: "A nudge email is successfully drafted."
     contextVariables:
       - name: "$Context.OrchestrationStage"

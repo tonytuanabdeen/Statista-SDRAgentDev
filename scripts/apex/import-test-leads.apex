@@ -2,7 +2,7 @@ List<Lead> leads = new List<Lead>();
 
 Lead l = new Lead(
     FirstName= 'TestLead',
-    LastName= 'TestingCenter-001',
+    LastName= 'TestingCenter-101',
     Title= 'Chief Marketing Officer',
     Industry= 'MANUFACTURING',
     Company= 'Journeyhorizon',
@@ -11,14 +11,14 @@ Lead l = new Lead(
     ProductOfInterest__c= 'BASIC_ACCOUNT_PLUS',
     SubscriptionStatus__c= 'non-subscriber',
     Website= 'https://www.journeyh.io',
-    Email= 'TestLead@TestingCenter001.io',
+    Email= 'tabdeen.dxb@gmail.com',
     LeadSource= 'Webform',
     Status= 'MQL');
 leads.add(l);
 
 l = new Lead(
     FirstName= 'TestLead',
-    LastName= 'TestingCenter-002',
+    LastName= 'TestingCenter-102',
     Title= 'Head of Data Engineering',
     Industry= 'MANUFACTURING',
     Company= 'Journeyhorizon',
@@ -27,14 +27,14 @@ l = new Lead(
     ProductOfInterest__c= 'BASIC_ACCOUNT_PLUS',
     SubscriptionStatus__c= 'non-subscriber',
     Website= 'https://www.journeyh.io',
-    Email= 'TestLead@TestingCenter002.io',
+    Email= 'tabdeen.dxb@gmail.com',
     LeadSource= 'Webform',
     Status= 'MQL');
 leads.add(l);
 
 l = new Lead(
     FirstName= 'TestLead',
-    LastName= 'TestingCenter-003',
+    LastName= 'TestingCenter-103',
     Title= 'VP of Strategy',
     Industry= 'MANUFACTURING',
     Company= 'Journeyhorizon',
@@ -43,7 +43,7 @@ l = new Lead(
     ProductOfInterest__c= 'BASIC_ACCOUNT_PLUS',
     SubscriptionStatus__c= 'non-subscriber',
     Website= 'https://www.journeyh.io',
-    Email= 'TestLead@TestingCenter003.io',
+    Email= 'tabdeen.dxb@gmail.com',
     LeadSource= 'Webform',
     Status= 'MQL');
 leads.add(l);

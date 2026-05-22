@@ -15,9 +15,9 @@
     "LeadSource": "Webform",
     "Status": "MQL",
     "persona_expected": "LNA-Persona-Marketing-Leader",
-    "salesforce_id": "00QbY00000Nq5pZ",
-    "initial_outreach_subject": "Subject: Consumer insights for Journeyhorizon",
-    "initial_outreach_body": "Body: **Body:**  \nHi Saarah,\n\nAs Chief Marketing Officer, you likely know the challenge of quantifying target audiences for effective campaign planning.\n\nStatista provides the behavior and attitude data needed to build data-backed campaign strategies and justify marketing spend with clear ROI.\n\nHappy to share a few relevant examples. Worth a quick look?"
+    "salesforce_id": "00QbY00000NutKk",
+    "initial_outreach_subject": "Subject: Understanding consumers for Journeyhorizon",
+    "initial_outreach_body": "Body: Hi Saarah,\n\nAs Chief Marketing Officer at Journeyhorizon, you likely face the challenge of quantifying target audiences and ensuring your brand strategy is backed by solid consumer evidence.\n\nStatista provides deep consumer insights to build data-backed campaign strategies and prove marketing effectiveness.\n\nWould a 15-minute call be worth it to see if this could be useful? Or if you&#39;ve already found what you needed, no worries at all."
   },
   {
     "id": "LEAD-002",
@@ -35,9 +35,9 @@
     "LeadSource": "Webform",
     "Status": "MQL",
     "persona_expected": "LNA-Persona-Data-BI-Leader",
-    "salesforce_id": "00QbY00000Nq5rB",
-    "initial_outreach_subject": "Subject: External data for AI initiatives",
-    "initial_outreach_body": "Body: Hi Markos,\n\nAs the Head of Data Engineering at New North, you likely encounter challenges with ensuring credible external data for AI initiatives.\n\nStatista provides curated and sourced external data, enabling you to feed verified statistics directly into your dashboards and AI tools. This reduces manual ingestion and ensures data governance.\n\nIf this is relevant to what your team is working on, I&#39;d be glad to show you what&#39;s possible."
+    "salesforce_id": "00QbY00000Nuwk1",
+    "initial_outreach_subject": "Subject: Trusted data for AI initiatives",
+    "initial_outreach_body": "Body: Hi Markos,\n\nI noticed you filled out a webform, and as Head of Data Engineering at New North, you likely encounter challenges integrating governed external data for your AI and BI tools.\n\nStatista provides curated, sourced data to enable AI initiatives and ensure data quality, reducing manual ingestion efforts.\n\nWould a 15-minute call be worth it to see if this could be useful? Or if you&#39;ve already found what you needed, no worries at all."
   },
   {
     "id": "LEAD-003",
@@ -55,9 +55,9 @@
     "LeadSource": "Webform",
     "Status": "MQL",
     "persona_expected": "LNA-Persona-Strategy-Leader",
-    "salesforce_id": "00QbY00000Nq5sn",
-    "initial_outreach_subject": "Subject: Market insights for manufacturing strategy",
-    "initial_outreach_body": "Body: Hi Elaina,\n\nAs a VP of Strategy at a manufacturing company, you likely encounter challenges with slow access to market evidence, which can delay strategy cycles.\n\nStatista helps strategy leaders like you by providing rapid access to credible market evidence, reducing the time spent on research and formatting for executive-ready insights.\n\nWould a 15-minute call be worth it to see if this could be useful? Or if you&#39;ve already found what you needed, no worries at all."
+    "salesforce_id": "00QbY00000Nuwld",
+    "initial_outreach_subject": "Subject: Strategy built on evidence rather than assumptions",
+    "initial_outreach_body": "Body: Hi Elaina,\n\nI noticed your recent interest in Statista. As VP of Strategy at SeeResponse, you likely experience delays in strategy cycles due to slow access to market evidence.\n\nStatista provides rapid fact-finding and a unified platform to help your team make faster, better-informed decisions, and prepare credible, board-ready materials.\n\nWould a 15-minute call be worth it to see if this could be useful? Or if you&#39;ve already found what you needed, no worries at all."
   },
   {
     "id": "LEAD-004",
@@ -75,9 +75,9 @@
     "LeadSource": "Webform",
     "Status": "MQL",
     "persona_expected": "LNA-Persona-Product-Leader",
-    "salesforce_id": "00QbY00000Nq5uP",
-    "initial_outreach_subject": "Subject: Market context for product strategy",
-    "initial_outreach_body": "Body: Hi James,\n\nI noticed your recent interest in Statista. Product leaders often seek external market context to complement internal product metrics, especially when driving product strategy and roadmap prioritization.\n\nStatista provides comprehensive market and adoption data, helping teams like yours validate opportunities and make data-informed roadmap decisions.\n\nHappy to share a few relevant examples \u2014 worth a quick look?"
+    "salesforce_id": "00QbY00000NuwnF",
+    "initial_outreach_subject": "Subject: A clearer view of where your market is heading",
+    "initial_outreach_body": "Body: Hi James,\n\nI noticed you recently explored content on Statista. As a Chief Product Officer, you likely experience the challenge of gaining external market context to complement internal product metrics.\n\nStatista provides comprehensive market and adoption data, helping product leaders like you validate opportunities and make data-informed roadmap decisions.\n\nIf this is relevant to what your team is working on, I&#39;d be glad to walk you through a quick demonstration."
   },
   {
     "id": "LEAD-005",
@@ -95,9 +95,9 @@
     "LeadSource": "Webform",
     "Status": "MQL",
     "persona_expected": "LNA-Persona-Consultant",
-    "salesforce_id": "00QbY00000Nq5w1",
-    "initial_outreach_subject": "Subject: Research support for Ironpaper",
-    "initial_outreach_body": "Body: Hi Priiaa,\n\nI noticed your recent interest in Statista. As a Senior Consultant, you often need to ramp up quickly on unfamiliar sectors and produce credible deliverables for client projects.\n\nStatista provides cross-industry coverage with source-backed data, helping your team reduce research time and deliver quality work faster.\n\nIf this is relevant to what your team is working on, I&#39;d be glad to show you what&#39;s possible."
+    "salesforce_id": "00QbY00000Nuwor",
+    "initial_outreach_subject": "Subject: Reduce uncertainty and move faster",
+    "initial_outreach_body": "Body: Hi Priiaa,\n\nConsultants often face tight deadlines when delivering client projects, requiring rapid ramp-up on unfamiliar sectors.\n\nStatista helps teams like yours reduce ramp-up time on new sectors by providing comprehensive, cross-industry coverage with credible, sourced data for your deliverables.\n\nWould a 15-minute call be worth it to see if this could be useful? Or if you&#39;ve already found what you needed, no worries at all."
   },
   {
     "id": "LEAD-006",
@@ -115,9 +115,9 @@
     "LeadSource": "Webform",
     "Status": "MQL",
     "persona_expected": "LNA-Persona-Founder-Executive",
-    "salesforce_id": "00QbY00000Nq478",
-    "initial_outreach_subject": "Subject: Research for Bay Leaf Digital",
-    "initial_outreach_body": "Body: Hi Aaesha,\n\nAs CEO of Bay Leaf Digital, you likely navigate resource constraints while needing to look credible to investors and partners.\n\nStatista provides professional data and charts, helping you make fast decisions and validate market assumptions without extensive research.\n\nIf this is relevant to what your team is working on, I&#39;d be glad to show you what&#39;s possible."
+    "salesforce_id": "00QbY00000NuwqT",
+    "initial_outreach_subject": "Subject: Reduce uncertainty and move faster",
+    "initial_outreach_body": "Body: Hi Aaesha,\n\nAs a CEO, you often make fast decisions with limited resources. Ensuring market validation for investor presentations can be time-consuming without dedicated research.\n\nStatista helps you validate market assumptions quickly with professional data and charts, allowing you to look credible without needing a large research team.\n\nWould a 15-minute call be worth it to see if this could be useful? Or if you&#39;ve already found what you needed, no worries at all."
   },
   {
     "id": "LEAD-007",
@@ -135,9 +135,9 @@
     "LeadSource": "Webform",
     "Status": "MQL",
     "persona_expected": "LNA-Persona-Executive-Assistant",
-    "salesforce_id": "00QbY00000Nq5xd",
-    "initial_outreach_subject": "Subject: Research support for Elevation Marketing",
-    "initial_outreach_body": "Body: Hi Zofia,\n\nI understand that Executive Assistants often face last-minute research requests from executives, requiring quick and reliable information.\n\nStatista provides trusted data that helps you respond to these requests efficiently, ensuring your executive has professional materials.\n\nWould a 15-minute call be worth it to see if this could be useful? Or if you&#39;ve already found what you needed, no worries at all."
+    "salesforce_id": "00QbY00000Nuws5",
+    "initial_outreach_subject": "Subject: Simplifying research requests",
+    "initial_outreach_body": "Body: Hi Zofia,\n\nExecutive Assistants often face last-minute research requests, needing reliable information quickly for their executives. This can lead to significant time pressure.\n\nStatista helps professionals like you respond in minutes by providing trusted data and ready-to-use charts. This ensures you can consistently deliver professional information without extensive research expertise.\n\nHappy to share a few relevant examples. Would you like to take a quick look?"
   },
   {
     "id": "LEAD-008",
@@ -155,8 +155,8 @@
     "LeadSource": "Webform",
     "Status": "MQL",
     "persona_expected": "General",
-    "salesforce_id": "00QbY00000Nq5zF",
-    "initial_outreach_subject": "Subject: Data for manufacturing market trends",
-    "initial_outreach_body": "Body: Hi Kenji,\n\nI understand manufacturing teams often need forward-looking data to make CapEx decisions and track global demand shifts.\n\nStatista provides comprehensive industry and technology trends, alongside market sizing for key end-markets, offering comparable data across countries for global operations.\n\nHappy to share a few relevant examples \u2014 worth a quick look?"
+    "salesforce_id": "00QbY00000NuqUw",
+    "initial_outreach_subject": "Subject: Manufacturing industry trends",
+    "initial_outreach_body": "Body: Hi Kenji,\n\nI noticed you recently explored content on Statista. For manufacturing teams in the United Kingdom, understanding global demand shifts and sector trends is critical for long-term planning.\n\nStatista provides comparable data across countries, industry and technology trends, and market sizing for key end markets. This helps teams like yours gain clear visibility into what is happening in their end markets.\n\nHappy to share a few relevant examples. Would you like to take a quick look?"
   }
 ]

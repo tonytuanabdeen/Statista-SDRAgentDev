@@ -69,7 +69,7 @@
         <inputParameters>
             <name>completionDisposition</name>
             <value>
-                <elementReference>CompletionDisposition</elementReference>
+                <elementReference>varCompletionDisposition</elementReference>
                 <inputConfiguratorMode>Resource</inputConfiguratorMode>
             </value>
         </inputParameters>
@@ -136,6 +136,40 @@
                 <elementReference>$Flow.FaultMessage</elementReference>
             </value>
         </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Setting the Completion Disposition to Opt-out</description>
+        <name>Set_Disposition_to_Opt_out</name>
+        <label>Set Disposition to Opt-out</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>varCompletionDisposition</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CompletionDisposition_OptOut</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Tracker_Id</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Setting the Completion Disposition to Replied</description>
+        <name>Set_Disposition_to_Replied</name>
+        <label>Set Disposition to Replied</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>varCompletionDisposition</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CompletionDisposition_Customer_Connected</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Tracker_Id</targetReference>
+        </connector>
     </assignments>
     <assignments>
         <description>Sets isSuccess to false to indicate the failure in retrieving the ID of the cadence tracker record.</description>
@@ -236,7 +270,15 @@
     </assignments>
     <constants>
         <description>Stores the outcome after completing the RemoveTargetFromCadence action.</description>
-        <name>CompletionDisposition</name>
+        <name>CompletionDisposition_Customer_Connected</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Customer Connected</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <description>Stores the outcome after completing the RemoveTargetFromCadence action.</description>
+        <name>CompletionDisposition_OptOut</name>
         <dataType>String</dataType>
         <value>
             <stringValue>Opt Out</stringValue>
@@ -427,7 +469,8 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Check_Tracker_Id</targetReference>
+            <isGoTo>true</isGoTo>
+            <targetReference>Set_Disposition_to_Opt_out</targetReference>
         </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
@@ -473,6 +516,10 @@
         <label>Unqualify Not Interested</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Set_Disposition_to_Replied</targetReference>
+        </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
             <targetReference>Set_Update_Lead_Failure_Status</targetReference>
@@ -512,7 +559,7 @@
         <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Check_Tracker_Id</targetReference>
+            <targetReference>Set_Disposition_to_Opt_out</targetReference>
         </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
@@ -558,6 +605,9 @@
         <label>Unqualify Spam</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
+        <connector>
+            <targetReference>Set_Disposition_to_Replied</targetReference>
+        </connector>
         <faultConnector>
             <targetReference>Set_Update_Lead_Failure_Status</targetReference>
         </faultConnector>
@@ -640,6 +690,13 @@
     <variables>
         <description>Classification result: SPAM, NOT_INTERESTED, or OPT_OUT</description>
         <name>varClassification</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>varCompletionDisposition</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>

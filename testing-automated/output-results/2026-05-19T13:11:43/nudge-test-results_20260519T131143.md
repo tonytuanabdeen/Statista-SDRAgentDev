@@ -1,11 +1,11 @@
 # LNA Nova — Nudge Test Results
 
-- **Agent:** `Agentforce_Sales_Development_Rep`
-- **Run timestamp:** `2026-05-15T17:22:15`
+- **Agent:** `Agentforce_Sales_Development_Rep_2`
+- **Run timestamp:** `2026-05-19T13:11:43`
 - **Org:** `Statista-FullSB`
 - **Status:** `COMPLETED`
-- **Start Time:** `2026-05-15 17:23:20+04:00`
-- **End Time:** `2026-05-15 17:23:32+04:00`
+- **Start Time:** `2026-05-19 13:16:27+04:00`
+- **End Time:** `2026-05-19 13:16:43+04:00`
 
 ---
 
@@ -13,15 +13,15 @@
 
 | Suite | Passed | Failed |
 |---|---:|---:|
-| LNA_Nova_Nudge | 1 | 1 |
-| **Total** | **1** | **1** |
+| LNA_Nova_Nudge | 2 | 0 |
+| **Total** | **2** | **0** |
 
 ---
 
 ## Detailed Results
 ## 1. Saarah Ching - Chief Marketing Officer
 
-- **Salesforce Id:** `00QbY00000NnYmU`
+- **Salesforce Id:** `00QbY00000NuoeQ`
 - **Company:** `Journeyhorizon`
 - **Industry:** `MANUFACTURING`
 - **Expected persona:** `LNA-Persona-Marketing-Leader`
@@ -35,36 +35,32 @@
 **Agent response:**
 
 ```
-Subject: Consumer understanding for Journeyhorizon
+Subject: Re: A clearer view of your target audiences
 
 Hi Saarah,
 
-As Chief Marketing Officer, you likely know the challenge of quantifying target audiences for effective campaign planning. Statista provides consumer data that helps teams refine audience segmentation and align campaigns with behavioral trends.
-
-Would this be helpful for your upcoming campaign planning?
+Quantifying target audiences and ensuring campaigns resonate is vital for marketing leaders. Statista helps build data-backed campaign strategies and prove marketing effectiveness. Would understanding consumer attitudes more deeply assist your team&#39;s campaign planning?
 ```
 
 ## 2. Markos Webher - Head of Data Engineering
 
-- **Salesforce Id:** `00QbY00000NndEH`
+- **Salesforce Id:** `00QbY00000NuvCr`
 - **Company:** `New North`
 - **Industry:** `MANUFACTURING`
 - **Expected persona:** `LNA-Persona-Data-BI-Leader`
 
 - **Utterance:** `Draft a nudge email to a lead. Do not schedule the email. Your response should be a text-formatted email and not JSON.`
 - **Topic assertion:** `PASS`
-- **Action assertion:** `PASS`
-- **Output validation:** `FAILURE`
+- **Action assertion:** `FAILURE`
+- **Output validation:** `PASS`
 - **Actual topic:** `sales_sdr_agent_FollowUpOutreach`
 
 **Agent response:**
 
 ```
-Subject: Re: External data for AI initiatives
+Subject: Re: Governed data for your systems
 
 Hi Markos,
 
-Integrating external data into your systems can be a complex task, especially when ensuring governance for AI tools. Statista simplifies this by providing curated data to automate external data flows.
-
-Would this help streamline your data engineering processes?
+Organizing external data for your systems can present difficulties. Statista offers curated data, which can support your AI tools with reliable information. Could this approach simplify your data operations?
 ```

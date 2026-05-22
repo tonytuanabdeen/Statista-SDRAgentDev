@@ -1,0 +1,141 @@
+name: "LNA Nova - Initial Outreach - 2026-05-19T13:25:07"
+subjectType: AGENT
+subjectName: Agentforce_Sales_Development_Rep_2
+
+testCases:
+  - utterance: "Draft an initial outreach email to a lead. Do not schedule the email. Your response should be a text-formatted email and not JSON."
+    expectedTopic: sales_sdr_agent_InitialOutreach
+    expectedActions:
+      - LNA_Nova_Initial_Outreach
+    expectedOutcome: "Agent generates a personalized first-touch outreach email with a subject line and greeting, without sharing prices or recommending specific meeting times. Language: English with UK spelling and conventions. Tone: professional, peer-to-peer, respectful of senior expertise, concise and value-focused."
+    contextVariables:
+      - name: "$Context.OrchestrationStage"
+        value: "Intro"
+      - name: "$Context.currentObjectApiName"
+        value: "Lead"
+      - name: "$Context.currentRecordId"
+        value: "00QbY00000NutKk"
+      - name: "$Context.ContactId"
+        value: "00QbY00000NutKk"
+      - name: "$Context.actionCadenceStepTrackerId"
+        value: "8HF000000000000"
+        
+  - utterance: "Draft an initial outreach email to a lead. Do not schedule the email. Your response should be a text-formatted email and not JSON."
+    expectedTopic: sales_sdr_agent_InitialOutreach
+    expectedActions:
+      - LNA_Nova_Initial_Outreach
+    expectedOutcome: "Agent generates a personalized first-touch outreach email with a subject line and greeting, without sharing prices or recommending specific meeting times. Language: English with UK spelling and conventions. Tone: professional, peer-to-peer, respectful of senior expertise, concise and value-focused."
+    contextVariables:
+      - name: "$Context.OrchestrationStage"
+        value: "Intro"
+      - name: "$Context.currentObjectApiName"
+        value: "Lead"
+      - name: "$Context.currentRecordId"
+        value: "00QbY00000Nuwk1"
+      - name: "$Context.ContactId"
+        value: "00QbY00000Nuwk1"
+      - name: "$Context.actionCadenceStepTrackerId"
+        value: "8HF000000000000"
+        
+  - utterance: "Draft an initial outreach email to a lead. Do not schedule the email. Your response should be a text-formatted email and not JSON."
+    expectedTopic: sales_sdr_agent_InitialOutreach
+    expectedActions:
+      - LNA_Nova_Initial_Outreach
+    expectedOutcome: "Agent generates a personalized first-touch outreach email with a subject line and greeting, without sharing prices or recommending specific meeting times. Language: English with UK spelling and conventions. Tone: professional, peer-to-peer, respectful of senior expertise, concise and value-focused."
+    contextVariables:
+      - name: "$Context.OrchestrationStage"
+        value: "Intro"
+      - name: "$Context.currentObjectApiName"
+        value: "Lead"
+      - name: "$Context.currentRecordId"
+        value: "00QbY00000Nuwld"
+      - name: "$Context.ContactId"
+        value: "00QbY00000Nuwld"
+      - name: "$Context.actionCadenceStepTrackerId"
+        value: "8HF000000000000"
+        
+  - utterance: "Draft an initial outreach email to a lead. Do not schedule the email. Your response should be a text-formatted email and not JSON."
+    expectedTopic: sales_sdr_agent_InitialOutreach
+    expectedActions:
+      - LNA_Nova_Initial_Outreach
+    expectedOutcome: "Agent generates a personalized first-touch outreach email with a subject line and greeting, without sharing prices or recommending specific meeting times. Language: English with UK spelling and conventions. Tone: professional, peer-to-peer, respectful of senior expertise, concise and value-focused."
+    contextVariables:
+      - name: "$Context.OrchestrationStage"
+        value: "Intro"
+      - name: "$Context.currentObjectApiName"
+        value: "Lead"
+      - name: "$Context.currentRecordId"
+        value: "00QbY00000NuwnF"
+      - name: "$Context.ContactId"
+        value: "00QbY00000NuwnF"
+      - name: "$Context.actionCadenceStepTrackerId"
+        value: "8HF000000000000"
+        
+  - utterance: "Draft an initial outreach email to a lead. Do not schedule the email. Your response should be a text-formatted email and not JSON."
+    expectedTopic: sales_sdr_agent_InitialOutreach
+    expectedActions:
+      - LNA_Nova_Initial_Outreach
+    expectedOutcome: "Agent generates a personalized first-touch outreach email with a subject line and greeting, without sharing prices or recommending specific meeting times. Language: English with UK spelling and conventions. Tone: professional, peer-to-peer, respectful of senior expertise, concise and value-focused."
+    contextVariables:
+      - name: "$Context.OrchestrationStage"
+        value: "Intro"
+      - name: "$Context.currentObjectApiName"
+        value: "Lead"
+      - name: "$Context.currentRecordId"
+        value: "00QbY00000Nuwor"
+      - name: "$Context.ContactId"
+        value: "00QbY00000Nuwor"
+      - name: "$Context.actionCadenceStepTrackerId"
+        value: "8HF000000000000"
+        
+  - utterance: "Draft an initial outreach email to a lead. Do not schedule the email. Your response should be a text-formatted email and not JSON."
+    expectedTopic: sales_sdr_agent_InitialOutreach
+    expectedActions:
+      - LNA_Nova_Initial_Outreach
+    expectedOutcome: "Agent generates a personalized first-touch outreach email with a subject line and greeting, without sharing prices or recommending specific meeting times. Language: English with UK spelling and conventions. Tone: professional, peer-to-peer, respectful of senior expertise, concise and value-focused."
+    contextVariables:
+      - name: "$Context.OrchestrationStage"
+        value: "Intro"
+      - name: "$Context.currentObjectApiName"
+        value: "Lead"
+      - name: "$Context.currentRecordId"
+        value: "00QbY00000NuwqT"
+      - name: "$Context.ContactId"
+        value: "00QbY00000NuwqT"
+      - name: "$Context.actionCadenceStepTrackerId"
+        value: "8HF000000000000"
+        
+  - utterance: "Draft an initial outreach email to a lead. Do not schedule the email. Your response should be a text-formatted email and not JSON."
+    expectedTopic: sales_sdr_agent_InitialOutreach
+    expectedActions:
+      - LNA_Nova_Initial_Outreach
+    expectedOutcome: "Agent generates a personalized first-touch outreach email with a subject line and greeting, without sharing prices or recommending specific meeting times. Language: English with UK spelling and conventions. Tone: professional, peer-to-peer, respectful of senior expertise, concise and value-focused."
+    contextVariables:
+      - name: "$Context.OrchestrationStage"
+        value: "Intro"
+      - name: "$Context.currentObjectApiName"
+        value: "Lead"
+      - name: "$Context.currentRecordId"
+        value: "00QbY00000Nuws5"
+      - name: "$Context.ContactId"
+        value: "00QbY00000Nuws5"
+      - name: "$Context.actionCadenceStepTrackerId"
+        value: "8HF000000000000"
+        
+  - utterance: "Draft an initial outreach email to a lead. Do not schedule the email. Your response should be a text-formatted email and not JSON."
+    expectedTopic: sales_sdr_agent_InitialOutreach
+    expectedActions:
+      - LNA_Nova_Initial_Outreach
+    expectedOutcome: "Agent generates a personalized first-touch outreach email with a subject line and greeting, without sharing prices or recommending specific meeting times. Language: English with UK spelling and conventions. Tone: professional, peer-to-peer, respectful of senior expertise, concise and value-focused."
+    contextVariables:
+      - name: "$Context.OrchestrationStage"
+        value: "Intro"
+      - name: "$Context.currentObjectApiName"
+        value: "Lead"
+      - name: "$Context.currentRecordId"
+        value: "00QbY00000NuqUw"
+      - name: "$Context.ContactId"
+        value: "00QbY00000NuqUw"
+      - name: "$Context.actionCadenceStepTrackerId"
+        value: "8HF000000000000"
+        

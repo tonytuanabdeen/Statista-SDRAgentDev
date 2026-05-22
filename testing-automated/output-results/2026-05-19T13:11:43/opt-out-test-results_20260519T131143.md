@@ -1,11 +1,11 @@
 # LNA Nova — Opt-Out Test Results
 
-- **Agent:** `Agentforce_Sales_Development_Rep`
-- **Run timestamp:** `2026-05-15T17:22:15`
+- **Agent:** `Agentforce_Sales_Development_Rep_2`
+- **Run timestamp:** `2026-05-19T13:11:43`
 - **Org:** `Statista-FullSB`
 - **Status:** `COMPLETED`
-- **Start Time:** `2026-05-15 17:26:18+04:00`
-- **End Time:** `2026-05-15 17:26:32+04:00`
+- **Start Time:** `2026-05-19 13:22:34+04:00`
+- **End Time:** `2026-05-19 13:23:00+04:00`
 
 ---
 
@@ -21,7 +21,7 @@
 ## Detailed Results
 ## 1. Priiaa Sharma - Senior Consultant
 
-- **Salesforce Id:** `00QbY00000NndNx`
+- **Salesforce Id:** `00QbY00000NufEZ`
 - **Company:** `Ironpaper`
 - **Industry:** `MANUFACTURING`
 - **Expected persona:** `LNA-Persona-Consultant`
@@ -35,16 +35,16 @@
 **Agent response:**
 
 ```
-Subject: Re: Research for client projects
+Subject: Re: Streamlining research for client projects.
 
 Hi,
 
-Thank you for letting us know. We understand this is not the right time and will not follow up further.
+Thank you for letting me know. I understand this is not the right time for you. I will not follow up further.
 ```
 
 ## 2. Aaesha Kahn - CEO
 
-- **Salesforce Id:** `00QbY00000NndPZ`
+- **Salesforce Id:** `00QbY00000NuvJJ`
 - **Company:** `Bay Leaf Digital`
 - **Industry:** `MANUFACTURING`
 - **Expected persona:** `LNA-Persona-Founder-Executive`
@@ -58,9 +58,9 @@ Thank you for letting us know. We understand this is not the right time and will
 **Agent response:**
 
 ```
-Subject: Re: Fast decisions for Bay Leaf Digital
+Subject: Re: Faster decisions with less guesswork.
 
 Hi,
 
-Thank you for letting us know. We understand it&#39;s not the right time and will not follow up further.
+Thank you for letting us know. We will not contact you further regarding this matter.
 ```

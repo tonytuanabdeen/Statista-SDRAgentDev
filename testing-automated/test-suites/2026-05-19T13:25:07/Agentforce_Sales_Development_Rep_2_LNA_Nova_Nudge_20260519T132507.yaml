@@ -1,0 +1,49 @@
+name: "LNA Nova - Follow-up Nudge - 2026-05-19T13:25:07"
+subjectType: AGENT
+subjectName: Agentforce_Sales_Development_Rep_2
+
+testCases:
+  - utterance: "Draft a nudge email to a lead. Do not schedule the email. Your response should be a text-formatted email and not JSON."
+    expectedTopic: sales_sdr_agent_FollowUpOutreach
+    expectedActions:
+      - GetRecordDetails
+      - LNA_Nova_Follow_up_Outreach
+    expectedOutcome: "A nudge email is successfully drafted."
+    contextVariables:
+      - name: "$Context.OrchestrationStage"
+        value: "Nudge"
+      - name: "$Context.currentObjectApiName"
+        value: "Lead"
+      - name: "$Context.currentRecordId"
+        value: "00QbY00000NutKk"
+      - name: "$Context.ContactId"
+        value: "00QbY00000NutKk"  
+      - name: "$Context.isFinalMessage"
+        value: false 
+      - name: "$Context.emailBody"
+        value: "Subject: Understanding consumers for Journeyhorizon Body: Hi Saarah,  As Chief Marketing Officer at Journeyhorizon, you likely face the challenge of quantifying target audiences and ensuring your brand strategy is backed by solid consumer evidence.  Statista provides deep consumer insights to build data-backed campaign strategies and prove marketing effectiveness.  Would a 15-minute call be worth it to see if this could be useful? Or if you&#39;ve already found what you needed, no worries at all."
+      - name: "$Context.actionCadenceStepTrackerId"
+        value: "8HF000000000000"  
+        
+  - utterance: "Draft a nudge email to a lead. Do not schedule the email. Your response should be a text-formatted email and not JSON."
+    expectedTopic: sales_sdr_agent_FollowUpOutreach
+    expectedActions:
+      - GetRecordDetails
+      - LNA_Nova_Follow_up_Outreach
+    expectedOutcome: "A nudge email is successfully drafted."
+    contextVariables:
+      - name: "$Context.OrchestrationStage"
+        value: "Nudge"
+      - name: "$Context.currentObjectApiName"
+        value: "Lead"
+      - name: "$Context.currentRecordId"
+        value: "00QbY00000Nuwk1"
+      - name: "$Context.ContactId"
+        value: "00QbY00000Nuwk1"  
+      - name: "$Context.isFinalMessage"
+        value: false 
+      - name: "$Context.emailBody"
+        value: "Subject: Trusted data for AI initiatives Body: Hi Markos,  I noticed you filled out a webform, and as Head of Data Engineering at New North, you likely encounter challenges integrating governed external data for your AI and BI tools.  Statista provides curated, sourced data to enable AI initiatives and ensure data quality, reducing manual ingestion efforts.  Would a 15-minute call be worth it to see if this could be useful? Or if you&#39;ve already found what you needed, no worries at all."
+      - name: "$Context.actionCadenceStepTrackerId"
+        value: "8HF000000000000"  
+        

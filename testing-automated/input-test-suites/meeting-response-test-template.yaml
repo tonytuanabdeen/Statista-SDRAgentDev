@@ -6,7 +6,7 @@ testCases:
   - utterance: "Respond to this email. Your response should be a text-formatted email and not JSON."
     expectedTopic: sales_sdr_agent_MeetingResponse
     expectedActions:
-      - GetRecordDetails
+      - LNA_Nova_Meeting_Response
     expectedOutcome: "Agent acknowledges, includes the meeting link on its own line."
     contextVariables:
       - name: "$Context.OrchestrationStage"
