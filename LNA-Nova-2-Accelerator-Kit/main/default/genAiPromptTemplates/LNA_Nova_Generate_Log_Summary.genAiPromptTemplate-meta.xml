@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
-    <activeVersionIdentifier>sjw1P7Ffa7+hUkQW1QLyoNBNcZ0eUr8bj0NPo/1/7qg=_1</activeVersionIdentifier>
+    <activeVersionIdentifier>RND6QHpOW4/w0/fEg5GOgLkttmtwjIytmiNeAcY8fEY=_4</activeVersionIdentifier>
     <description>Generating Summary Log Description</description>
     <developerName>LNA_Nova_Generate_Log_Summary</developerName>
     <masterLabel>LNA Nova - Generate Log Summary</masterLabel>
     <overridable>false</overridable>
     <templateVersions>
-        <content>**Summary Bullet**: Generate exactly 1 bullet summarizing the lead&apos;s reply {!$Input:EmailBody} for internal conversation logging.
+        <content>**Summary Bullet**: Generate exactly 1 bullet point summarizing ONLY explicit information written by the lead in this email:
+&lt;&lt;- Start Email
+ {!$Input:EmailBody}.
+-&gt;&gt; End of Email
+
+
 ## Spelling &amp; Locale
-You must use {!$Input:Lead.Lead_Locale__c} spelling and apply this consistently throughout the entire email.
+You must use {!$Input:Lead.Lead_Locale__c} spelling and apply this consistently throughout the entire Summary Bullet.
 
 Format:
-- You must use the TODAY&apos;S DATE {!$Input:Current_Date}. Return today&apos;s date in [YYYY-MM-DD] format.
-- [TODAY&apos;S DATE in YYYY-MM-DD] &lt;what the lead requested or stated — 1-2 sentences&gt;
+- You must use the DATE {!$Input:Current_Date}. Return date in [YYYY-MM-DD] format.
+- [ {!$Input:Current_Date} in YYYY-MM-DD] &lt;what the lead requested or stated — 1-2 sentences&gt;
 
 Shape reference (placeholders only; do NOT copy content or dates):
 - [YYYY-MM-DD] Requested to be removed from further outreach
 
-If you cannot ground the bullet in something the lead actually wrote, do NOT create one — return an empty string for summary.
+If you cannot ground the bullet in something the lead actually wrote, do NOT create one — return an empty string for Summary Bullet.
 
 Build the **Updated Summary** value:
 1: Read the existing {!$Input:Lead.LeadDescription__c} value from the lead data already in your context.
@@ -30,9 +35,8 @@ Rules:
 - Start with literal text &quot;Nova&apos;s Update&quot; followed by &lt;br&gt;
 - Use &lt;br&gt; as line separator (field is Rich Text — plain newlines won&apos;t render)
 - Bullet starts with &quot;- &quot; (hyphen + space), not •
-- Use today&apos;s date in [YYYY-MM-DD] format — not the literal placeholder or an example date
+- Use date in [YYYY-MM-DD] format — not the literal placeholder or an example date
 - Always return dates enclosed within square brackets using the format [YYYY-MM-DD]. Never return standalone dates without brackets.
-
 
 ## Output Format
 Return ONLY the **Updated Summary** value &amp; &quot;prior&quot;: **prior bullets**.
@@ -64,7 +68,7 @@ Return ONLY the **Updated Summary** value &amp; &quot;prior&quot;: **prior bulle
         <primaryModel>sfdc_ai__DefaultVertexAIGemini25Flash001</primaryModel>
         <responseFormat>JSON</responseFormat>
         <status>Published</status>
-        <versionIdentifier>sjw1P7Ffa7+hUkQW1QLyoNBNcZ0eUr8bj0NPo/1/7qg=_1</versionIdentifier>
+        <versionIdentifier>RND6QHpOW4/w0/fEg5GOgLkttmtwjIytmiNeAcY8fEY=_4</versionIdentifier>
     </templateVersions>
     <type>einstein_gpt__flex</type>
     <visibility>Global</visibility>

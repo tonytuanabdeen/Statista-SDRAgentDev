@@ -60,7 +60,7 @@
             <name>promptResponse</name>
         </outputParameters>
     </actionCalls>
-    <apiVersion>67.0</apiVersion>
+    <apiVersion>66.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <decisions>
         <name>Check_if_Last_Nudge</name>
